@@ -3,16 +3,19 @@ using namespace std;
 #ifndef __FARMANIMAL_HPP__
 #define __FARMANIMAL_HPP__
 
+
 class FarmAnimal{
-	protected :
-		int lapar;
+	protected:
+		
+		int lapar; //mati saat lapar = -5
 		bool hasilProduct;
-		int tickSebelumMati;
-	public :
+		
+	public:
 		FarmAnimal();
-		~FarmAnimal();
+		
 		virtual void suara() = 0;
-		void move();
+		virtual void move() = 0;
+		
 		void eat();
 		int getLapar() const;
 		bool getHasilProduct() const;
