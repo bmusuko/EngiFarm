@@ -3,11 +3,8 @@
 #include "Farm_Product.hpp"
 
 class SheepMeat : public Farm_Product{
-
-
-
-
-
+    public:
+        void setHarga(int harga);
 };
 
 
