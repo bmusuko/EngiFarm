@@ -9,6 +9,7 @@ class Player{
         int posisiX; //Sementara, gua gatau posisi enaknya taro di player apa di cell
         int posisiY;
         int wadahAir;
+        int money;
         //LinkedList<Produk> tas;
     public:
         //Konstruktor  
@@ -26,8 +27,10 @@ class Player{
         //Setter Getter
         int getWadahAir() const;
         int getTas(int idx) const;
+        int getMoney() const;
         void setWadahAir(int wadahAir);
         void setTas(int idx /*, Product P*/);
+        void setMoney(int money);
 
         //Method Lainnya
         void talk();
