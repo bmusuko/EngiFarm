@@ -3,9 +3,10 @@
 #include "Farm_Product.hpp"
 
 class ChickenEgg : public Farm_Product {
-    //public:
-        //ctor
-        //ChickenEgg();
+
+    public:
+        void setHarga(int harga);
+
 };
 
 

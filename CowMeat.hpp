@@ -2,9 +2,10 @@
 #define __COWMEAT_H__
 #include "Farm_Product.hpp"
 class CowMeat : public Farm_Product{
-    //public:
+    public:
         //ctor
         //CowMeat();
+        void setHarga(int harga);
 
 };
 

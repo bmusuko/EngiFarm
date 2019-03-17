@@ -6,7 +6,7 @@ using namespace std;
 class Product {
     protected:
         int harga; //harga nya product bisa beda-beda
-
+        int nProduct;
 
 
     public:
@@ -23,8 +23,13 @@ class Product {
         //~Product();
 
         //method
+        void tambahProduk(); //n_product ++
+        void kurangProduk(); //n_product --
         int getHarga() const;
-        void setHarga(int harga);
+        int getnProduct() const;
+        virtual void setHarga(int harga) = 0;
+        
+
 };
 
 
