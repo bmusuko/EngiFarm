@@ -2,7 +2,7 @@
 #define __EggProducingFarmAnimal_HPP__
 
 #include"FarmAnimal.hpp"
-using namepspace std;
+using namespace std;
 
 
 class EggProducingFarmAnimal: public FarmAnimal{
