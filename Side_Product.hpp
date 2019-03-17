@@ -3,9 +3,9 @@
 #include "Product.hpp"
 
 class Side_Product : public Product {
-    public:
+    //public:
     //ctor
-        Side_Product();
+        //Side_Product();
 
 };
 

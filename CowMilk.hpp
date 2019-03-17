@@ -3,9 +3,9 @@
 #include "Farm_Product.hpp"
 
 class CowMilk : public Farm_Product {
-    public:
+    //public:
         //ctor
-        CowMilk();
+        //CowMilk();
 
 
 };
