@@ -8,7 +8,7 @@ class Grassland : public Land{
         
     public:
         //Konstruktor
-        Grassland(int X, int Y, bool grass,bool object) : Land (X,Y,grass,object,2) {};
+        Grassland(int X, int Y, bool grass,bool object);
     
 };
 

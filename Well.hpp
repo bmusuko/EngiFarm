@@ -8,7 +8,7 @@ class Well : public Facility{
         
     public:
         //Konstuktor
-        Well(int X, int Y): Facility(X,Y,1) {};
+        Well(int X, int Y);
 
 
         void use();

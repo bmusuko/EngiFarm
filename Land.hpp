@@ -9,7 +9,7 @@ class Land: public Cell{
         int landType;   //1 coop, 2 grassland, 3 barn
     public:
         //Konstruktor
-        Land(int X, int Y, bool grass, bool object, int type) : Cell (X,Y) {};
+        Land(int X, int Y, bool grass, bool object, int type);
 
         //Setter & Getter
         bool getIsGrassExist() const;

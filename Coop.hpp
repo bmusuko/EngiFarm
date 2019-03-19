@@ -8,7 +8,7 @@ class Coop : public Land{
         
     public:
         //Konstruktor
-        Coop(int X, int Y, bool grass, bool object) : Land (X,Y,grass,object,1) {};
+        Coop(int X, int Y, bool grass, bool object);
 };
 
 #endif

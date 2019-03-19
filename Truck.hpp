@@ -8,7 +8,7 @@ class Truck : public Facility{
         
     public:
         //Konstuktor
-        Truck(int X, int Y): Facility(X,Y,3) {};
+        Truck(int X, int Y);
 
         void use();
 };

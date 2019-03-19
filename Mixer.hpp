@@ -8,7 +8,7 @@ class Mixer : public Facility{
         
     public:
         //Konstuktor
-        Mixer(int X, int Y): Facility(X,Y,2) {};
+        Mixer(int X, int Y);
 
 
         void use();
