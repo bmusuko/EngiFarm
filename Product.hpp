@@ -11,10 +11,10 @@ class Product {
 
     public:
         //ctor
-        Product();
+        //Product();
 
         //ctor with parameter
-        //Product();
+        Product(int harga);
 
         //cctor
         //Product();
