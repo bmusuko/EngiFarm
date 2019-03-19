@@ -1,8 +1,8 @@
 #ifndef __DUCKEGG_H__
 #define __DUCKEGG_H__
-#include "Farm_Product.hpp"
+#include "FarmProduct.hpp"
 
-class DuckEgg : public Farm_Product {
+class DuckEgg : public FarmProduct {
     public:
         void setHarga(int harga);
 };

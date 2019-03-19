@@ -1,8 +1,8 @@
 #ifndef __GOATMILK_H__
 #define __GOATMILK_H__
-#include "Farm_Product.hpp"
+#include "FarmProduct.hpp"
 
-class GoatMilk : public Farm_Product{
+class GoatMilk : public FarmProduct{
     public:
         void setHarga(int harga);
 

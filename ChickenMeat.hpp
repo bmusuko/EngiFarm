@@ -1,8 +1,8 @@
 #ifndef __CHICKENMEAT_H__
 #define __CHICKENMEAT_H__
-#include "Farm_Product.hpp"
+#include "FarmProduct.hpp"
 
-class ChickenMeat : public Farm_Product{
+class ChickenMeat : public FarmProduct{
     public:
         void setHarga(int harga);
 

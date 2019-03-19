@@ -1,7 +1,7 @@
 #ifndef __COWMEAT_H__
 #define __COWMEAT_H__
-#include "Farm_Product.hpp"
-class CowMeat : public Farm_Product{
+#include "FarmProduct.hpp"
+class CowMeat : public FarmProduct{
     public:
         //ctor
         //CowMeat();
