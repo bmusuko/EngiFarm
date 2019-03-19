@@ -5,7 +5,7 @@
 class BeefRolade : public SideProduct {
     public:
         //ctor
-        BeefRolade(int harga);
+        BeefRolade();
 };
 
 

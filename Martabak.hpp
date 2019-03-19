@@ -5,7 +5,7 @@
 class Martabak : public SideProduct{
     public:
         //ctor
-        Martabak(int harga);
+        Martabak();
 
 
 };

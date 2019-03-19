@@ -4,7 +4,7 @@
 class CowMeat : public FarmProduct{
     public:
         //ctor
-        CowMeat(int harga);
+        CowMeat();
 
 };
 

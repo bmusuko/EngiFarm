@@ -5,7 +5,7 @@
 class DuckEgg : public FarmProduct {
     public:
         //ctor
-        DuckEgg(int harga);
+        DuckEgg();
 };
 
 
