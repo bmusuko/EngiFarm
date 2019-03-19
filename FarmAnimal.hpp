@@ -9,16 +9,17 @@ class FarmAnimal{
 		
 		int lapar; //mati saat lapar = -5
 		bool hasilProduct;
+		bool isMeatProducing = false;
+		bool isMilkProducing = false;
+		bool isEggProcducing = false;
 		
 	public:
 		FarmAnimal();
 		
 		virtual void suara() = 0;
-		virtual void move() = 0;
-		virtual string getTipeProducingAnimal() = 0;
 		virtual string getTipeFarmAnimal() = 0;
 
-
+		void move();
 		void eat();
 		int getLapar() const;
 		bool getHasilProduct() const;
