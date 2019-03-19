@@ -3,7 +3,7 @@
 
 #include "MeatProducingFarmAnimal.hpp"
 
-class buffalo : public MeatProducingFarmAnimal{
+class Buffalo : public MeatProducingFarmAnimal{
 	protected:
 		static int BuffaloAlive;
 	public:
