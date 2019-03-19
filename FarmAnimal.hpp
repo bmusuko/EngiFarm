@@ -1,4 +1,5 @@
 using namespace std;
+#include<iostream>
 
 #ifndef __FARMANIMAL_HPP__
 #define __FARMANIMAL_HPP__
@@ -9,10 +10,11 @@ class FarmAnimal{
 		
 		int lapar; //mati saat lapar = -5
 		bool hasilProduct;
-		bool isMeatProducing = false;
-		bool isMilkProducing = false;
-		bool isEggProcducing = false;
-		
+		bool isMeatProducing;
+		bool isMilkProducing;
+		bool isEggProcducing;
+		int x;
+		int y;
 	public:
 		FarmAnimal();
 		
