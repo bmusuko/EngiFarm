@@ -27,7 +27,7 @@ class Product {
         void kurangProduk(); //n_product --
         int getHarga() const;
         int getnProduct() const;
-        virtual void setHarga(int harga) = 0;
+        void setHarga(int harga);
         
 
 };

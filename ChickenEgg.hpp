@@ -5,7 +5,8 @@
 class ChickenEgg : public FarmProduct {
 
     public:
-        void setHarga(int harga);
+        //ctor
+        ChickenEgg();
 
 };
 

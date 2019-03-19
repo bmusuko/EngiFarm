@@ -3,8 +3,9 @@
 #include "SideProduct.hpp"
 
 class Martabak : public SideProduct{
-
-
+    public:
+        //ctor
+        Martabak();
 
 
 };

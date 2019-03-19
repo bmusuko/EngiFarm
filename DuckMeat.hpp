@@ -4,7 +4,8 @@
 
 class DuckMeat : public FarmProduct {
     public:
-        void setHarga(int harga);
+        //CTOR
+        DuckMeat();
 
 };
 

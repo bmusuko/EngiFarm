@@ -3,7 +3,9 @@
 #include "SideProduct.hpp"
 
 class BeefRolade : public SideProduct {
-
+    public:
+        //ctor
+        BeefRolade();
 };
 
 

@@ -4,7 +4,8 @@
 
 class DuckEgg : public FarmProduct {
     public:
-        void setHarga(int harga);
+        //ctor
+        DuckEgg();
 };
 
 
