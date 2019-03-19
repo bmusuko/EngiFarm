@@ -27,7 +27,6 @@ class FarmAnimal{
 		bool getHasilProduct() const;
 		void setLapar(int lapar);
 		void setHasilProduct(bool hasilProduct);
-		void gerakFarmAnimal();
 };
 
 #endif
