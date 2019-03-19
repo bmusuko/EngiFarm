@@ -7,8 +7,10 @@ using namespace std;
 
 class EggProducingFarmAnimal: public FarmAnimal{
     public: 
-       void move();
-	   virtual void respondInteract() = 0;
+        //ctor buat set IsEggProducing = true;
+        EggProducingFarmAnimal();
+        //buat kill hewan dan buat objek egg
+	    virtual void respondInteract() = 0;
 };
 
 #endif
