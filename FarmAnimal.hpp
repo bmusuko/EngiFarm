@@ -15,8 +15,9 @@ class FarmAnimal{
 		
 		virtual void suara() = 0;
 		virtual void move() = 0;
-		virtual void getTipeProducingAnimal() = 0;
-		virtual void getTipeFarmAnimal() = 0;
+		virtual string getTipeProducingAnimal() = 0;
+		virtual string getTipeFarmAnimal() = 0;
+
 
 		void eat();
 		int getLapar() const;

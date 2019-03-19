@@ -8,9 +8,12 @@ class Chicken : public EggProducingFarmAnimal, public MeatProducingFarmAnimal {
     protected:
         static int ChickenAlive;
     public:
-        void suara(); //cout
-        void respondInteract(); // call tambah egg
+    	Chicken();
+    	~Chicken();
+        void suara(); //cout "ptok ptok"
+        void respondInteract(); // call tambah ChickenEgg
         void respondKill(); //ChickenAlive-1
+        string getTipeFarmAnimal();
         static int getChickenAlive(); //return ChickenAlive
 };
 #endif

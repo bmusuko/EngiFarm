@@ -6,9 +6,12 @@ class Sheep : public MeatProducingFarmAnimal {
     protected:
         static int SheepAlive;
     public:
-        void suara(); //cout "pukpuk"
-        void respondKill(); //CowAlive-1
-        static int getSheepAlive(); //return CowAlive
+    	Sheep();
+    	~Sheep();
+        void suara(); //cout "mbee mbee"
+        void respondKill(); //SheepAlive-1
+        string getTipeFarmAnimal();
+        static int getSheepAlive(); //return SheepAlive
 
 };
 #endif
