@@ -7,6 +7,10 @@ class Well : public Facility{
     private:
         
     public:
+        //Konstuktor
+        Well(int X, int Y): Facility(X,Y,1) {};
+
+
         void use();
 };
 

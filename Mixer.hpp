@@ -7,6 +7,10 @@ class Mixer : public Facility{
     private:
         
     public:
+        //Konstuktor
+        Mixer(int X, int Y): Facility(X,Y,2) {};
+
+
         void use();
     
 };
