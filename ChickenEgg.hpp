@@ -6,7 +6,7 @@ class ChickenEgg : public FarmProduct {
 
     public:
         //ctor
-        ChickenEgg();
+        ChickenEgg(int harga);
 
 };
 

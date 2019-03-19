@@ -6,7 +6,7 @@
 class Cheese : public SideProduct {
     public:
         //ctor
-        Cheese();
+        Cheese(int harga);
 
 };
 

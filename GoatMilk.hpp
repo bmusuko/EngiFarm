@@ -5,7 +5,7 @@
 class GoatMilk : public FarmProduct{
     public:
         //ctor
-        GoatMilk();
+        GoatMilk(int harga);
 
 
 
