@@ -12,8 +12,8 @@ class Duck : public EggProducingFarmAnimal, public MeatProducingFarmAnimal {
     	~Duck();
         void suara(); //cout "kwek kwek"
         void respondInteract(); // call tambah DuckEgg
-        void getTipeFarmAnimal();
-        string respondKill(); //DuckAlive-1
+        string getTipeFarmAnimal();
+        void respondKill(); //DuckAlive-1
         static int getDuckAlive(); //return DuckAlive
 };
 #endif
