@@ -7,9 +7,12 @@ class Cow : public MilkProducingFarmAnimal, public MeatProducingFarmAnimal {
     protected:
         static int CowAlive;
     public:
-        void suara(); //cout "pukpuk"
-        void respondInteract(); // call tambah milk
+    	Cow();
+    	~Cow();
+        void suara(); //cout "mooo moo"
+        void respondInteract(); // call tambah Cowmilk
         void respondKill(); //CowAlive-1
+        string getTipeFarmAnimal();
         static int getCowAlive(); //return CowAlive
 
 };
