@@ -10,9 +10,9 @@ Buffalo::~Buffalo(){
 void Buffalo::suara(){
 	cout<<"pukpuk"<<endl;
 } //cout "pukpuk"
-FarmAnimal Buffalo::respondKill(){
+FarmProduct Buffalo::respondKill(){
 	~Buffalo();
-	B BuffaloMeat();
+	BuffaloMeat B();
 	return B;
 } //BuffaloAlive-1
 string Buffalo::getTipeFarmAnimal(){
