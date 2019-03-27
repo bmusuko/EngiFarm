@@ -5,7 +5,7 @@ Buffalo::Buffalo(){
 	BuffaloAlive++;
 }
 Buffalo::~Buffalo(){
-	Buffalo--;
+	BuffaloAlive--;
 }
 void Buffalo::suara(){
 	cout<<"pukpuk"<<endl;
