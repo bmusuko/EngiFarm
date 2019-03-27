@@ -7,9 +7,11 @@ FarmAnimal::FarmAnimal(){
 	MilkProducing = false;
 	EggProducing = false;
 }
-void move();
-void eat(){
+void move(){
 	
+}
+void eat(){
+
 }
 int FarmAnimal::getLapar() const{
     return lapar;

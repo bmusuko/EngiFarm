@@ -3,6 +3,9 @@
 
 #include "Product.hpp"
 #include "LinkedList.hpp"
+#include "Cell.hpp"
+#include "Land.hpp"
+#include "Facility.hpp"
 
 class Player{
     private:

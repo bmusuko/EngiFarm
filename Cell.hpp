@@ -7,6 +7,7 @@ class Cell{
         int Y;
     public:
         //Konstruktor
+        Cell(); 
         Cell(int X,int Y);
 
         //Getter
