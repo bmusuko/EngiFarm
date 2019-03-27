@@ -27,7 +27,9 @@ class FarmAnimal{
 		bool getHasilProduct() const;
 		void setLapar(int lapar);
 		void setHasilProduct(bool hasilProduct);
-		void is
+		void isMeatProducing() const;
+		void isMilkProducing() const;
+		void isEggProducing() const;
 };
 
 #endif
