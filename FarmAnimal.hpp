@@ -10,9 +10,9 @@ class FarmAnimal{
 		
 		int lapar; //mati saat lapar = -5
 		bool hasilProduct;
-		bool isMeatProducing;
-		bool isMilkProducing;
-		bool isEggProcducing;
+		bool MeatProducing;
+		bool MilkProducing;
+		bool EggProcducing;
 		int x;
 		int y;
 	public:
@@ -27,6 +27,7 @@ class FarmAnimal{
 		bool getHasilProduct() const;
 		void setLapar(int lapar);
 		void setHasilProduct(bool hasilProduct);
+		void is
 };
 
 #endif
