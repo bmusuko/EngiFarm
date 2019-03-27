@@ -1,4 +1,7 @@
 #include"Buffalo.hpp"
+#include "BufalloMeat.hpp"
+#include <iostream>
+using namespace std;
 
 int Buffalo::BuffaloAlive = 0;
 Buffalo::Buffalo(){
