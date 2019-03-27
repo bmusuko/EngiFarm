@@ -8,7 +8,9 @@ FarmAnimal::FarmAnimal(){
 	EggProducing = false;
 }
 void move();
-void eat();
+void eat(){
+	
+}
 int FarmAnimal::getLapar() const{
     return lapar;
 }
@@ -29,6 +31,6 @@ bool FarmAnimal::isMilkProducing() const{
 	return MilkProducing;
 }
 
-bool FarmAnimal::isEggProducing() const{
+void FarmAnimal::isEggProducing() const{
 	return EggProducing;
 }
