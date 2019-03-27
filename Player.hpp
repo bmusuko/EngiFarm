@@ -6,7 +6,7 @@
 
 class Player{
     private:
-        static int tick;    //Diinisialisasi dengan nilai 0
+        static int tick;  //Diinisialisasi dengan nilai 0
         int posisiX; //Sementara, gua gatau posisi enaknya taro di player apa di cell
         int posisiY;
         int wadahAir;
