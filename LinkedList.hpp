@@ -57,7 +57,7 @@ class LinkedList{
 		bool isEmpty() const{
 			return (head == NULL);
 		}
-		
+
 		void add(T element){
 			Node *node = new Node();
 			node->x = element;

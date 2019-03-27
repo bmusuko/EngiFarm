@@ -12,7 +12,7 @@ class FarmAnimal{
 		bool hasilProduct;
 		bool MeatProducing;
 		bool MilkProducing;
-		bool EggProcducing;
+		bool EggProducing;
 		int x;
 		int y;
 	public:

@@ -20,21 +20,22 @@ class Player{
         Player(const Player&);
 
         //Dtor
-        ~Player();
+        //~Player();
 
         //Operator Assignment
         Player& operator= (const Player&);
 
         //Setter Getter
         int getWadahAir() const;
-        int getTas(int idx) const;
+        Product getTas(int idx) const;
         int getMoney() const;
         static int getTick();
         int getPosisiX() const;
         int getPosisiY() const;
 
         void setWadahAir(int wadahAir);
-        void setTas(int idx , Product P);
+        void addElTas(Product P);
+        void delElTas(Product P);
         void setMoney(int money);
 
         //Method Lainnya
