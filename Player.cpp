@@ -67,5 +67,9 @@ void Player::setMoney(int money){
     this->money = money;
 }
 
+void Player::talk(){
+    
+}
+
 
 
