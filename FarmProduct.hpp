@@ -3,9 +3,9 @@
 #include "Product.hpp"
 
 class FarmProduct : public Product {
-    // public:
+    public:
     //     //ctor
-    //     FarmProduct(int harga);
+        FarmProduct();
 };
 
 
