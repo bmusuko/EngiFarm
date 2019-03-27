@@ -21,14 +21,14 @@ void FarmAnimal::setLapar(int lapar){
 void FarmAnimal::setHasilProduct(bool hasilProduct){
     this->hasilProduct = hasilProduct;
 }
-void FarmAnimal::isMeatProducing() const{
+bool FarmAnimal::isMeatProducing() const{
 	return MeatProducing;
 }
 
-void FarmAnimal::isMilkProducing() const{
+bool FarmAnimal::isMilkProducing() const{
 	return MilkProducing;
 }
 
-void FarmAnimal::isEggProducing() const{
+bool FarmAnimal::isEggProducing() const{
 	return EggProducing;
 }
