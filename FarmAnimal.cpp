@@ -3,9 +3,9 @@ using namespace std;
 
 FarmAnimal::FarmAnimal(){
 	hasilProduct = false;
-    isMeatProducing = false;
-    isMilkProducing = false;
-	isEggProcducing = false;
+    MeatProducing = false;
+    MilkProducing = false;
+	EggProcducing = false;
 }
 void move();
 void eat();
