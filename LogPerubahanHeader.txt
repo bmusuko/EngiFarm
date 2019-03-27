@@ -1,1 +1,3 @@
-Wednesday March 27 2019
+Wednesday March 27 2019:
+1.  Header Product.hpp 
+    void setHarga(int harga) -> void setHarga(int h)

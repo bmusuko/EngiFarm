@@ -27,7 +27,7 @@ class Product {
         // void kurangProduk(); //n_product --
         int getHarga() const;
         // int getnProduct() const;
-        void setHarga(int harga);
+        void setHarga(int h);
         
 
 };
