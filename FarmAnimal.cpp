@@ -3,21 +3,32 @@ using namespace std;
 
 FarmAnimal::FarmAnimal(){
 	hasilProduct = false;
-    MeatProducing = false;
-    MilkProducing = false;
-	EggProcducing = false;
+	MeatProducing = false;
+	MilkProducing = false;
+	EggProducing = false;
 }
 void move();
 void eat();
-int getLapar() const{
+int FarmAnimal::getLapar() const{
     return lapar;
 }
-bool getHasilProduct() const{
+bool FarmAnimal::getHasilProduct() const{
     return hasilProduct;
 }
 void FarmAnimal::setLapar(int lapar){
     this->lapar = lapar;
 }
-void setHasilProduct(bool hasilProduct){
+void FarmAnimal::setHasilProduct(bool hasilProduct){
     this->hasilProduct = hasilProduct;
+}
+void FarmAnimal::isMeatProducing() const{
+	return MeatProducing;
+}
+
+void FarmAnimal::isMilkProducing() const{
+	return MilkProducing;
+}
+
+void FarmAnimal::isEggProducing() const{
+	return EggProducing;
 }
