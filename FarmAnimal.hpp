@@ -1,5 +1,7 @@
 using namespace std;
 #include<iostream>
+#include"FarmProduct.hpp"
+
 
 #ifndef __FARMANIMAL_HPP__
 #define __FARMANIMAL_HPP__

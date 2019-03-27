@@ -10,7 +10,7 @@ class Buffalo : public MeatProducingFarmAnimal{
 		Buffalo();
 		~Buffalo();
 		void suara(); //cout "pukpuk"
-		void respondKill(); //BuffaloAlive-1
+		FarmAnimal respondKill(); //BuffaloAlive-1
 		string getTipeFarmAnimal();
 		static int getBuffaloAlive(); //return BuffaloAlive
 };
