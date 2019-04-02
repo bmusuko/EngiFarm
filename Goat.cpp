@@ -22,8 +22,7 @@ FarmProduct Goat::respondInteract() {
         return G;
     }
     else {
-        //throw something
-        throw new exception();
+        return null;
     }
 }
 FarmProduct Goat::respondKill() {

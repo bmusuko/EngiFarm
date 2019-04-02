@@ -5,9 +5,6 @@ using namespace std;
 
 FarmAnimal::FarmAnimal(){
 	hasilProduct = false;
-	MeatProducing = false;
-	MilkProducing = false;
-	EggProducing = false;
 }
 
 void FarmAnimal::TryMove(int &x,int &y){

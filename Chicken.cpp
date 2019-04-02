@@ -18,12 +18,11 @@ void Chicken::suara() {
 FarmProduct Chicken::respondInteract() {
     if (getHasilProduct()) {
         setHasilProduct(false);
-        ChickenEgg C;
+        ChickenEgg G;
         return G;
     }
     else {
-        //throw something
-        throw new exception();
+        return null;
     }
 }
 FarmProduct Chicken::respondKill() {

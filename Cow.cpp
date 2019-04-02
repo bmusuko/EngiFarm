@@ -23,7 +23,7 @@ FarmProduct Cow::respondInteract() {
     }
     else {
         //throw something
-        throw new exception();
+        return null;
     }
 }
 FarmProduct Cow::respondKill() {
