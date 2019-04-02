@@ -10,7 +10,6 @@ using namespace std;
 
 class FarmAnimal{
 	protected:
-		
 		int lapar; //mati saat lapar = -5
 		bool hasilProduct;
 		int x;

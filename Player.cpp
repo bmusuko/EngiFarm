@@ -3,7 +3,6 @@
 
 using namespace std;
 
-int Player::tick = 0;
 Player::Player(){
     posisiX = 0;
     posisiY = 0;
@@ -39,10 +38,6 @@ int Player::getMoney() const{
     return money;
 }
 
-int Player::getTick(){
-    return tick;
-}
-
 int Player::getPosisiX() const{
     return posisiX;
 }
@@ -67,9 +62,15 @@ void Player::setMoney(int money){
     this->money = money;
 }
 
-void Player::talk(){
+void Player::talk(FarmAnimal* hewan){
     
 }
+
+void interact(FarmAnimal* hewan){}
+void interact(Facility* facility){}
+void kill(FarmAnimal* hewan){}
+void grow(Land* L){}
+void move(int arah){}
 
 
 
