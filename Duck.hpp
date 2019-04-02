@@ -9,11 +9,11 @@ class Duck : public EggProducingFarmAnimal, public MeatProducingFarmAnimal {
     protected:
         static int DuckAlive;
     public:
-    	Duck();
+    	Duck(int x,int y);
     	~Duck();
         void suara(); //cout "kwek kwek"
-        FarmProduct respondInteract(); // call tambah DuckEgg
-        FarmProduct respondKill();
+        FarmProduct* respondInteract(); // call tambah DuckEgg
+        FarmProduct* respondKill();
         string getTipeFarmAnimal();
         void respondKill(); //DuckAlive-1
         static int getDuckAlive(); //return DuckAlive

@@ -14,9 +14,9 @@ class FarmAnimal{
 		bool hasilProduct;
 		int x;
 		int y;
+		int lapar_max;
 	public:
-		FarmAnimal();
-
+		FarmAnimal(int x,int y,int lapar);
 		virtual void suara() = 0;
 
 		void TryMove(int &x,int &y);

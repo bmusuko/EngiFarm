@@ -4,7 +4,8 @@
 using namespace std;
 
 int Buffalo::BuffaloAlive = 0;
-Buffalo::Buffalo(){
+Buffalo::Buffalo(int x,int y):FarmAnimal(x,y,15){
+	lapar_max =15;
 	BuffaloAlive++;
 }
 Buffalo::~Buffalo(){
@@ -13,10 +14,10 @@ Buffalo::~Buffalo(){
 void Buffalo::suara(){
 	cout<<"pukpuk"<<endl;
 } //cout "pukpuk"
-FarmProduct Buffalo::respondKill(){
+FarmProduct* Buffalo::respondKill(){
 	~Buffalo();
 	BuffaloMeat B();
-	return B;
+	return &B;
 } //BuffaloAlive-1
 int Buffalo::getBuffaloAlive(){
 	return BuffaloAlive;

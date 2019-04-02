@@ -29,8 +29,9 @@ void FarmAnimal::move(int x,int y){
 }
 
 void FarmAnimal::eat(){
-	lapar = 10;
+	lapar = lapar_max;
 	hasilProduct = true;
+
 }
 
 int FarmAnimal::getLapar() const{

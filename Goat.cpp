@@ -6,7 +6,8 @@ using namespace std;
 
 int Goat::GoatAlive = 0;
 
-Goat::Goat() {
+Goat::Goat(int x,int y):FarmAnimal(x,y,14) {
+    lapar_max = 14;
     GoatAlive++;
 }
 Goat::~Goat() {
@@ -15,20 +16,15 @@ Goat::~Goat() {
 void Goat::suara() {
     cout<<"mbee mbee"<<endl;
 }
-FarmProduct Goat::respondInteract() {
-    if (getHasilProduct()) {
-        setHasilProduct(false);
-        GoatMilk G;
-        return G;
-    }
-    else {
-        return null;
-    }
+FarmProduct* Goat::respondInteract() {
+    setHasilProduct(false);
+    GoatMilk G;
+    return &G;
 }
-FarmProduct Goat::respondKill() {
+FarmProduct* Goat::respondKill() {
     ~Goat();
     GoatMeat C;
-    return C;
+    return &C;
 }
 int Goat::getGoatAlive() {
     return GoatAlive;

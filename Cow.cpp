@@ -6,7 +6,8 @@ using namespace std;
 
 int Cow::CowAlive = 0;
 
-Cow::Cow() {
+Cow::Cow(int x,int y):FarmAnimal(x,y,17) {
+    lapar_max = 17;
     CowAlive++;
 }
 Cow::~Cow() {
@@ -15,21 +16,15 @@ Cow::~Cow() {
 void Cow::suara() {
     cout<<"moo moo"<<endl;
 }
-FarmProduct Cow::respondInteract() {
-    if (getHasilProduct()) {
-        setHasilProduct(false);
-        CowMilk G;
-        return G;
-    }
-    else {
-        //throw something
-        return NULL;
-    }
+FarmProduct* Cow::respondInteract() {
+    setHasilProduct(false);
+    CowMilk G;
+    return &G;
 }
-FarmProduct Cow::respondKill() {
+FarmProduct* Cow::respondKill() {
     ~Cow();
     CowMeat C;
-    return C;
+    return &C;
 }
 int Cow::getCowAlive() {
     return CowAlive;

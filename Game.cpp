@@ -58,6 +58,7 @@ Game::Game(){
 		dll>>y;
 		if(c == 'A'){
 			Chicken C;
+			
 		}
 		
 	}

@@ -6,7 +6,8 @@ using namespace std;
 
 int Duck::DuckAlive = 0;
 
-Duck::Duck() {
+Duck::Duck(int x,int y):FarmAnimal(x,y,6) {
+    lapar_max = 6;
     DuckAlive++;
 }
 Duck::~Duck() {
@@ -15,21 +16,15 @@ Duck::~Duck() {
 void Duck::suara() {
     cout<<"ptok ptok"<<endl;
 }
-FarmProduct Duck::respondInteract() {
-    if (getHasilProduct()) {
-        setHasilProduct(false);
-        DuckEgg G ;
-        return G;
-    }
-    else {
-        //throw something
-        return null;
-    }
+FarmProduct* Duck::respondInteract() {
+    setHasilProduct(false);
+    DuckEgg G ;
+    return &G;
 }
-FarmProduct Duck::respondKill() {
+FarmProduct* Duck::respondKill() {
     ~Duck();
     DuckMeat C;
-    return C;
+    return &C;
 }
 int Duck::getDuckAlive() {
     return DuckAlive;

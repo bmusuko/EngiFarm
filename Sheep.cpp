@@ -4,7 +4,8 @@
 using namespace std;
 
 int Sheep::SheepAlive = 0;
-Sheep::Sheep(){
+Sheep::Sheep(int x,int y):FarmAnimal(x,y,12){
+	lapar_max = 12;
 	SheepAlive++;
 }
 Sheep::~Sheep(){
@@ -13,10 +14,10 @@ Sheep::~Sheep(){
 void Sheep::suara(){
 	cout<<"pukpuk"<<endl;
 } //cout "pukpuk"
-FarmProduct Sheep::respondKill(){
+FarmProduct* Sheep::respondKill(){
 	~Sheep();
-	SheepMeat B();
-	return B;
+	SheepMeat B;
+	return &B;
 } //SheepAlive-1
 int Sheep::getSheepAlive(){
 	return SheepAlive;

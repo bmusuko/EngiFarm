@@ -10,7 +10,7 @@ class Sheep : public MeatProducingFarmAnimal {
     	Sheep();
     	~Sheep();
         void suara(); //cout "mbee mbee"
-        FarmProduct respondKill(); //SheepAlive-1
+        FarmProduct* respondKill(); //SheepAlive-1
         string getTipeFarmAnimal();
         static int getSheepAlive(); //return SheepAlive
 
