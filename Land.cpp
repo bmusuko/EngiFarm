@@ -1,11 +1,8 @@
 #include "Land.hpp"
 
-Land::Land(int X, int Y, bool grass, bool object, bool coop,bool grassland,bool barn):Cell(X,Y){
+Land::Land(int X, int Y, bool grass, bool object):Cell(X,Y){
     this->isObjectExist = object;
     this->isGrassExist = grass;
-    this->coop = coop;
-    this->grassland = grassland;
-    this->barn = barn;
 }
 
 bool Land::getIsGrassExist() const{

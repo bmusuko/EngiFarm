@@ -8,7 +8,7 @@ class Land: public Cell{
         bool isGrassExist;  //Boolean untuk mengecek apakah ada rumput atau tidak
     public:
         //Konstruktor
-        Land(int X, int Y, bool grass, bool object, bool coop,bool grassland,bool barn);
+        Land(int X, int Y, bool grass, bool object);
         //Setter & Getter
         bool getIsGrassExist() const;
         bool getIsObjectExist () const;
