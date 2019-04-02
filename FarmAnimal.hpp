@@ -16,9 +16,8 @@ class FarmAnimal{
 		int y;
 	public:
 		FarmAnimal();
-		
-		virtual void suara() = 0;
 
+		virtual void suara() = 0;
 
 		void TryMove(int &x,int &y);
 		void move(int x,int y);
@@ -28,4 +27,6 @@ class FarmAnimal{
 		void setLapar(int lapar);
 		void setHasilProduct(bool hasilProduct);
 };
+
+#endif
 

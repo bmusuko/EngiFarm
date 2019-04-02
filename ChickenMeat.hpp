@@ -9,8 +9,4 @@ class ChickenMeat : public FarmProduct{
 
 };
 
-
-
-
-
 #endif

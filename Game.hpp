@@ -26,7 +26,6 @@
 #include"Cheese.hpp"
 #include"Martabak.hpp"
 
-
-class Game(){
+class Game{
 	Game();
 }
