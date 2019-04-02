@@ -3,7 +3,7 @@
 
 #include"FarmAnimal.hpp"
 using namespace std;
-
+#include "FarmProduct.hpp"
 
 class EggProducingFarmAnimal: public FarmAnimal{
     public: 
