@@ -20,8 +20,7 @@ class FarmAnimal{
 		
 		virtual void suara() = 0;
 
-		virtual void respondInteract() = 0;
-		virtual void respondKill() = 0;
+
 		void TryMove(int &x,int &y);
 		void move(int x,int y);
 		void eat();
@@ -31,4 +30,3 @@ class FarmAnimal{
 		void setHasilProduct(bool hasilProduct);
 };
 
-#endif
