@@ -11,7 +11,7 @@
 class Matriks{
     private:
         int size;
-        Cell **matriks;
+        static Cell **matriks;
     
     public:
         Matriks(int size);
