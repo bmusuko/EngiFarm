@@ -10,7 +10,7 @@ class Truck : public Facility{
         //Konstuktor
         Truck(int X, int Y);
 
-        void use();
+        void use(Player * P);
 };
 
 #endif

@@ -30,8 +30,12 @@ int Player::getWadahAir() const{
     return wadahAir;
 }
 
-Product Player::getTas(int idx) const{
+Product Player::getIsiTas(int idx) const{
     return tas.get(idx);
+}
+
+LinkedList<Product> Player::getTas() const{
+    return this->tas;
 }
 
 int Player::getMoney() const{

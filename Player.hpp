@@ -33,7 +33,8 @@ class Player{
 
         //Setter Getter
         int getWadahAir() const;
-        Product getTas(int idx) const;
+        Product getIsiTas(int idx) const;
+        LinkedList<Product> getTas() const;
         int getMoney() const;
         static int getTick();
         int getPosisiX() const;
