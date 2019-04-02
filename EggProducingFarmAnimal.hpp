@@ -8,7 +8,6 @@ using namespace std;
 class EggProducingFarmAnimal: public FarmAnimal{
     public: 
         //ctor buat set IsEggProducing = true;
-        EggProducingFarmAnimal();
         //buat kill hewan dan buat objek egg
 	    virtual FarmProduct respondInteract() = 0;
 };
