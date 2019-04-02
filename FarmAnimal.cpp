@@ -42,3 +42,11 @@ void FarmAnimal::setLapar(int lapar){
 void FarmAnimal::setHasilProduct(bool hasilProduct){
     this->hasilProduct = hasilProduct;
 }
+
+int FarmAnimal::getX() const{
+	return this->x;
+}
+
+int FarmAnimal::getY() const{
+	return this->y;
+}

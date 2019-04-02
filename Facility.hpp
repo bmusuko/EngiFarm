@@ -15,7 +15,7 @@ class Facility: public Cell{
         int getFacilityType() const;
 
         //Fungsi virtual
-        virtual void use() = 0;
+        virtual void use(Player * P) = 0;
 
 };
 

@@ -26,6 +26,8 @@ class FarmAnimal{
 		bool getHasilProduct() const;
 		void setLapar(int lapar);
 		void setHasilProduct(bool hasilProduct);
+		int getX() const;
+		int getY() const;
 };
 
 #endif

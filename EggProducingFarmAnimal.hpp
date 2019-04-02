@@ -9,7 +9,7 @@ class EggProducingFarmAnimal: public FarmAnimal{
     public: 
         //ctor buat set IsEggProducing = true;
         //buat kill hewan dan buat objek egg
-	    virtual FarmProduct respondInteract() = 0;
+	    virtual FarmProduct* respondInteract() = 0;
 };
 
 #endif

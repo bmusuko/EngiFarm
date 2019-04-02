@@ -9,7 +9,7 @@ class MeatProducingFarmAnimal: public FarmAnimal{
     public:
         //buat kill hewan dan buat objek meat
 
-		virtual FarmAnimal respondKill() = 0;
+		virtual FarmProduct* respondKill() = 0;
 };
 
 #endif

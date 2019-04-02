@@ -23,7 +23,7 @@ FarmProduct Cow::respondInteract() {
     }
     else {
         //throw something
-        return null;
+        return NULL;
     }
 }
 FarmProduct Cow::respondKill() {

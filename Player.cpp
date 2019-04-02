@@ -50,12 +50,12 @@ void Player::setWadahAir(int wadahAir){
     this->wadahAir = wadahAir;
 }
 
-void Player::addElTas(Product P){
-    this->tas.add(P);
+void Player::addElTas(Product *P){
+    this->tas.add(*P);
 }
 
-void Player::delElTas(Product P){
-    this->tas.remove(P);
+void Player::delElTas(Product *P){
+    this->tas.remove(*P);
 }
 
 void Player::setMoney(int money){
@@ -63,14 +63,38 @@ void Player::setMoney(int money){
 }
 
 void Player::talk(FarmAnimal* hewan){
-    
+    hewan->suara();
 }
 
-void interact(FarmAnimal* hewan){}
-void interact(Facility* facility){}
-void kill(FarmAnimal* hewan){}
-void grow(Land* L){}
-void move(int arah){}
+void Player::interact(MilkProducingFarmAnimal* hewan){
+    this->addElTas(hewan->respondInteract()); //keknya udah bener
+}
+void Player::interact(EggProducingFarmAnimal* hewan){
+    this->addElTas(hewan->respondInteract()); //keknya udah bener
+}
+void Player::interact(Facility* facility){
+    facility->use(this);    //keknya udah bener
+}
+
+void Player::kill(MeatProducingFarmAnimal* hewan){
+    this->addElTas(hewan->respondKill()); //keknya udah bener
+}
+
+void Player::grow(Land* L){
+    L->setIsGrassExist(true);
+}
+
+void Player::move(int arah){
+    if (arah == 1){
+        posisiY++;
+    }else if (arah == 2){
+        posisiX++;
+    }else if(arah == 3){
+        posisiY--;
+    }else if (arah == 4){
+        posisiX--;
+    }
+}
 
 
 
