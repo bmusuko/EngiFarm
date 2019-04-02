@@ -3,8 +3,11 @@ using namespace std;
 #include <cstdlib>
 #include <ctime>
 
-FarmAnimal::FarmAnimal(){
+FarmAnimal::FarmAnimal(int x,int y,int lapar){
 	hasilProduct = false;
+	this-> x = x;
+	this-> y = y;
+	this-> lapar = lapar;
 }
 
 void FarmAnimal::TryMove(int &x,int &y){
@@ -41,4 +44,12 @@ void FarmAnimal::setLapar(int lapar){
 }
 void FarmAnimal::setHasilProduct(bool hasilProduct){
     this->hasilProduct = hasilProduct;
+}
+
+int FarmAnimal::getX() const{
+	return this->x;
+}
+
+int FarmAnimal::getY() const{
+	return this->y;
 }

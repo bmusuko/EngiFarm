@@ -8,7 +8,7 @@ using namespace std;
 class MilkProducingFarmAnimal: public FarmAnimal{
     public:
         //buat interact hewan dan buat objek milk
-        virtual FarmProduct respondInteract() = 0;
+        virtual FarmProduct* respondInteract() = 0;
 };
 
 #endif

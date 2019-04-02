@@ -57,7 +57,7 @@ Game::Game(){
 		dll>>x;
 		dll>>y;
 		if(c == 'A'){
-			Ayam 
+			Chicken C;
 		}
 		
 	}

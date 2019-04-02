@@ -7,6 +7,9 @@
 #include "Land.hpp"
 #include "Facility.hpp"
 #include "FarmAnimal.hpp"
+#include "MeatProducingFarmAnimal.hpp"
+#include "MilkProducingFarmAnimal.hpp"
+#include "EggProducingFarmAnimal.hpp"
 
 class Player{
     private:
@@ -37,15 +40,16 @@ class Player{
         int getPosisiY() const;
 
         void setWadahAir(int wadahAir);
-        void addElTas(Product P);
-        void delElTas(Product P);
+        void addElTas(Product *P);
+        void delElTas(Product *P);
         void setMoney(int money);
 
         //Method Lainnya
         void talk(FarmAnimal* hewan);
-        void interact(FarmAnimal* hewan);
+        void interact(MilkProducingFarmAnimal* hewan);
+        void interact(EggProducingFarmAnimal* hewan);
         void interact(Facility* facility);
-        void kill(FarmAnimal* hewan);
+        void kill(MeatProducingFarmAnimal* hewan);
         void grow(Land* L);
         void move(int arah);
         //Method move buat gerak, arah 1 = atas, 2= kanan, 3 = bawah, 4 = kiri

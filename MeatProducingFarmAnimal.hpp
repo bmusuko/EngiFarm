@@ -8,8 +8,8 @@ using namespace std;
 class MeatProducingFarmAnimal: public FarmAnimal{
     public:
         //buat kill hewan dan buat objek meat
-
-		virtual FarmAnimal respondKill() = 0;
+    	MeatProducingFarmAnimal(int x, int y,int lapar);
+		virtual FarmProduct* respondKill() = 0;
 };
 
 #endif
