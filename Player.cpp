@@ -77,7 +77,7 @@ void Player::interact(EggProducingFarmAnimal* hewan){
     this->addElTas(hewan->respondInteract()); //keknya udah bener
 }
 void Player::interact(Facility* facility){
-    facility->use(this);    //keknya udah bener
+    facility->use(this->tas,this->money,this->wadahAir);    //keknya udah bener
 }
 
 void Player::kill(MeatProducingFarmAnimal* hewan){
