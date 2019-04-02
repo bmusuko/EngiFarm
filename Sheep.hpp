@@ -2,6 +2,7 @@
 #define __SHEEP_HPP__
 
 #include "MeatProducingFarmAnimal.hpp"
+#include "FarmProduct.hpp"
 class Sheep : public MeatProducingFarmAnimal {
     protected:
         static int SheepAlive;
@@ -9,7 +10,7 @@ class Sheep : public MeatProducingFarmAnimal {
     	Sheep();
     	~Sheep();
         void suara(); //cout "mbee mbee"
-        void respondKill(); //SheepAlive-1
+        FarmProduct respondKill(); //SheepAlive-1
         string getTipeFarmAnimal();
         static int getSheepAlive(); //return SheepAlive
 

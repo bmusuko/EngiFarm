@@ -3,6 +3,7 @@
 
 #include "MilkProducingFarmAnimal.hpp"
 #include "MeatProducingFarmAnimal.hpp"
+#include "FarmProduct.hpp"
 class Cow : public MilkProducingFarmAnimal, public MeatProducingFarmAnimal {
     protected:
         static int CowAlive;
@@ -10,8 +11,8 @@ class Cow : public MilkProducingFarmAnimal, public MeatProducingFarmAnimal {
     	Cow();
     	~Cow();
         void suara(); //cout "mooo moo"
-        void respondInteract(); // call tambah Cowmilk
-        void respondKill(); //CowAlive-1
+        FarmProduct respondInteract(); // call tambah Cowmilk
+        FarmProduct respondKill(); //CowAlive-1
         string getTipeFarmAnimal();
         static int getCowAlive(); //return CowAlive
 

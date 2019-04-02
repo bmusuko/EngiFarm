@@ -2,6 +2,7 @@
 #define __BUFFALO_HPP__
 
 #include "MeatProducingFarmAnimal.hpp"
+#include "FarmProduct.hpp"
 
 class Buffalo : public MeatProducingFarmAnimal{
 	protected:

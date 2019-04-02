@@ -3,6 +3,7 @@
 
 #include "EggProducingFarmAnimal.hpp"
 #include "MeatProducingFarmAnimal.hpp"
+#include "FarmProduct.hpp"
 
 class Duck : public EggProducingFarmAnimal, public MeatProducingFarmAnimal {
     protected:
@@ -11,7 +12,8 @@ class Duck : public EggProducingFarmAnimal, public MeatProducingFarmAnimal {
     	Duck();
     	~Duck();
         void suara(); //cout "kwek kwek"
-        void respondInteract(); // call tambah DuckEgg
+        FarmProduct respondInteract(); // call tambah DuckEgg
+        FarmProduct respondKill();
         string getTipeFarmAnimal();
         void respondKill(); //DuckAlive-1
         static int getDuckAlive(); //return DuckAlive

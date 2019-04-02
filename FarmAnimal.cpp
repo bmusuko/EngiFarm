@@ -1,6 +1,7 @@
 using namespace std;
 #include"FarmAnimal.hpp"
 
+
 FarmAnimal::FarmAnimal(){
 	hasilProduct = false;
 	MeatProducing = false;
@@ -8,10 +9,10 @@ FarmAnimal::FarmAnimal(){
 	EggProducing = false;
 }
 void move(){
-	
+
 }
 void eat(){
-
+	if()
 }
 int FarmAnimal::getLapar() const{
     return lapar;
