@@ -1,5 +1,6 @@
 #include"MeatProducingFarmAnimal.hpp"
 using namespace std;
-MeatProducingFarmAnimal::MeatProducingFarmAnimal(){
-	MeatProducing = true;
+
+MeatProducingFarmAnimal::void respondInteract(){
+	cout<<"Hewan Tidak dapat di interact :)"<<endl;
 }

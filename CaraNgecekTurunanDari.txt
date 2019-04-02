@@ -1,0 +1,3 @@
+if(ClassAtas* v = dynamic_cast<ClassAtas*>(objectBawah)) {
+   // code
+}

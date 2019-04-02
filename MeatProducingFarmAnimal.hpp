@@ -7,10 +7,9 @@ using namespace std;
 
 class MeatProducingFarmAnimal: public FarmAnimal{
     public:
-        //ctor buat set IsMeatProducing = true;
-        MeatProducingFarmAnimal();
         //buat kill hewan dan buat objek meat
-        virtual FarmProduct respondKill() = 0;
+
+		virtual FarmAnimal respondKill() = 0;
 };
 
 #endif
