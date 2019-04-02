@@ -11,7 +11,7 @@ class Facility: public Cell{
 
 
         //Fungsi virtual
-        virtual void use(Player * P) = 0;
+        virtual void use(LinkedList<Product> LP,int money, int water) = 0;
 
 };
 

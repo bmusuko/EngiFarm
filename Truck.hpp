@@ -10,7 +10,7 @@ class Truck : public Facility{
         //Konstuktor
         Truck(int X, int Y);
 
-        void use(Player * P);
+        void use(LinkedList<Product> LP,int money, int water);
 };
 
 #endif
