@@ -18,12 +18,12 @@ void Duck::suara() {
 FarmProduct Duck::respondInteract() {
     if (getHasilProduct()) {
         setHasilProduct(false);
-        DuckEgg C;
+        DuckEgg G;
         return G;
     }
     else {
         //throw something
-        throw new exception();
+        return null;
     }
 }
 FarmProduct Duck::respondKill() {

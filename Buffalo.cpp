@@ -18,10 +18,6 @@ FarmProduct Buffalo::respondKill(){
 	BuffaloMeat B();
 	return B;
 } //BuffaloAlive-1
-string Buffalo::getTipeFarmAnimal(){
-	string s = "Buffalo";
-	return s;
-}
 int Buffalo::getBuffaloAlive(){
 	return BuffaloAlive;
 } //return BuffaloAlive

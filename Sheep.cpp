@@ -18,10 +18,6 @@ FarmProduct Sheep::respondKill(){
 	SheepMeat B();
 	return B;
 } //SheepAlive-1
-string Sheep::getTipeFarmAnimal(){
-	string s = "Sheep";
-	return s;
-}
 int Sheep::getSheepAlive(){
 	return SheepAlive;
 } //return SheepAlive
