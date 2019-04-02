@@ -10,21 +10,10 @@ class Product {
 
 
     public:
-        //ctor
-        //Product();
-
         //ctor with parameter
         Product(int harga);
 
-        //cctor
-        //Product();
-        
-        //dtor
-        //~Product();
-
         //method
-        // void tambahProduk(); //n_product ++
-        // void kurangProduk(); //n_product --
         int getHarga() const;
         // int getnProduct() const;
         void setHarga(int h);
