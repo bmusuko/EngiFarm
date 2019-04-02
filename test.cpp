@@ -9,6 +9,7 @@ int main() {
     // int random_number = rand()%4; // rand() return a number between ​0​ and RAND_MAX
     // std::cout << random_number<<endl;;
     ifstream input;
+    ifstream dll;
     input.open("peta.txt");
 	int n;
 	int m;
@@ -31,6 +32,15 @@ int main() {
 			cout<<peta[i][j]<<" ";
 		}
 		cout<<endl;
+	}
+	char c;
+	int x,y;
+	dll.open("dll.txt");
+	while(!dll.eof()){
+		dll>>c;
+		dll>>x;
+		dll>>y;
+		cout<<c<<" "<<x<<" "<<y<<endl;
 	}
     return 0;
 }

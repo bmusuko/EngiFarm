@@ -6,48 +6,60 @@ using namespace std;
 
 
 Game::Game(){
-    ifstream input;
-    input.open("peta.txt");
+    ifstream petaInput;  
+    petaInput.open("peta.txt");
 	int n;
 	int m;
-	input>>n;
-	input>>m;
+	petaInput>>n;
+	petaInput>>m;
 	peta = new Cell**[n];
 	for(int i=0;i<n;i++){
 		peta[i] = new Cell*[m];
 	}
 	for(int i=0;i<n;i++){
-		input>>temp;
+		petaInput>>temp;
 		for(int j=0;j<m;j++){
-			if(input[j] == 'o'){
+			if(temp[j] == 'o'){
 				Coop C(i,j,false,false);
 				peta[i][j] = &C;
-			} else if(input[j] == '*'){
+			} else if(temp[j] == '*'){
 				Coop C(i,j,true,false);
 				peta[i][j] = &C;
-			} else if(input[j] == '-'){
+			} else if(temp[j] == '-'){
 				Grassland G(i,j,false,false);
 				peta[i][j] = &G;
-			} else if (input[j] == '#'){
+			} else if (temp[j] == '#'){
 				Grassland G(i,j,true,false);
 				peta[i][j] = &G;
-			} else if (input == 'x'){
+			} else if (temp == 'x'){
 				Barn B(i,j,false,false);
 				peta[i][j] = &B;
-			} else if (input == '@'){
+			} else if (temp == '@'){
 				Barn B(i,j,true,false);
 				peta[i][j] == &B;
-			} else if (input == 'T'){
+			} else if (temp == 'T'){
 				Truck T(i,j);
 				peta[i][j] = &T;
-			} else if (input == 'M'){
+			} else if (temp == 'M'){
 				Mixer M(i,j);
 				peta[i][j] = &M;
-			} else if (input == 'W'){
+			} else if (temp == 'W'){
 				Well W(i,j);
 				peta[i][j] = &W;
 			}
 		}
+	}
+	ListFarmAnimal = new LinkedList<FarmAnimal*>;
+	ifstream dllInput;
+	dllInput.open("dll.txt");
+	while(!dll.eof()){
+		dll>>c;
+		dll>>x;
+		dll>>y;
+		if(c == 'A'){
+			Chicken C;
+		}
+		
 	}
 }
 
