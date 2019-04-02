@@ -18,7 +18,7 @@ void Duck::suara() {
 FarmProduct Duck::respondInteract() {
     if (getHasilProduct()) {
         setHasilProduct(false);
-        DuckEgg G;
+        DuckEgg G ;
         return G;
     }
     else {

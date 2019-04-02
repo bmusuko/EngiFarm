@@ -3,4 +3,6 @@
 #include <iostream>
 using namespace std;
 
-FarmProduct::FarmProduct():Product(harga){}
+FarmProduct::FarmProduct():Product(harga){
+
+}

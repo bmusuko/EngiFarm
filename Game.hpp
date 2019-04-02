@@ -27,5 +27,11 @@
 #include"Martabak.hpp"
 
 class Game{
-	Game();
+	private :
+		Cell ***peta;
+		int tick;
+	public :
+		Game();
+		void play();
+		void nextTick();
 }
