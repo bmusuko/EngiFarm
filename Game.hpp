@@ -27,10 +27,11 @@
 #include"Martabak.hpp"
 
 
-class Game(){
+class Game{
 	private :
 		Cell ***peta;
 		int tick;
+		LinkedList ListFarmAnimal;
 	public :
 		Game();
 		void play();
