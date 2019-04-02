@@ -6,10 +6,10 @@
 #include "Cell.hpp"
 #include "Land.hpp"
 #include "Facility.hpp"
+#include "FarmAnimal.hpp"
 
 class Player{
     private:
-        static int tick;  //Diinisialisasi dengan nilai 0
         int posisiX; //Sementara, gua gatau posisi enaknya taro di player apa di cell
         int posisiY;
         int wadahAir;
@@ -42,12 +42,11 @@ class Player{
         void setMoney(int money);
 
         //Method Lainnya
-        void talk();
-        void interact();
-        void kill();
-        void grow();
-        void nextTick(); //Untuk melakukan inkremen pada atribut tick yang menandakan penambahan waktu
-
+        void talk(FarmAnimal* hewan);
+        void interact(FarmAnimal* hewan);
+        void interact(Facility* facility);
+        void kill(FarmAnimal* hewan);
+        void grow(Land* L);
         void move(int arah);
         //Method move buat gerak, arah 1 = atas, 2= kanan, 3 = bawah, 4 = kiri
 };
