@@ -7,8 +7,6 @@ using namespace std;
 
 class MilkProducingFarmAnimal: public FarmAnimal{
     public:
-        //ctor buat set IsMilkProducing = true;
-        MilkProducingFarmAnimal();
         //buat interact hewan dan buat objek milk
         virtual FarmProduct respondInteract() = 0;
 };
