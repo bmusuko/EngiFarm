@@ -57,8 +57,23 @@ Game::Game(){
 		dll>>x;
 		dll>>y;
 		if(c == 'A'){
-			Chicken C;
-			
+			Chicken C(x,y);
+			ListFarmAnimal.add(&C);
+		} else if (c == 'D'){
+			Duck D(x,y);
+			ListFarmAnimal.add(&D);
+		} else if (c == 'B'){
+			Buffalo B(x,y);
+			ListFarmAnimal.add(&B);
+		} else if (c == 'S'){
+			Sheep S(x,y);
+			ListFarmAnimal.add(&S);
+		} else if (c == 'C'){
+			Cow C(x,y);
+			ListFarmAnimal.add(&C);
+		} else if (c == 'G'){
+			Goat G(x,y);
+			ListFarmAnimal.add(&G);
 		}
 		
 	}
