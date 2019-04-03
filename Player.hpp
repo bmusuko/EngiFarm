@@ -44,6 +44,8 @@ class Player{
         void addElTas(Product *P);
         void delElTas(Product *P);
         void setMoney(int money);
+        void setX(int x);
+        void setY(int y);
 
         //Method Lainnya
         void talk(FarmAnimal* hewan);

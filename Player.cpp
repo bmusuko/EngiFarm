@@ -50,6 +50,12 @@ int Player::getPosisiY() const{
     return posisiY;
 }
 
+void Player::setX(int x){
+    posisiX = x;
+}
+void Player::setY(int y){
+    posisiY = y;
+}
 void Player::setWadahAir(int wadahAir){
     this->wadahAir = wadahAir;
 }

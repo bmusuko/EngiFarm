@@ -10,9 +10,8 @@ class LinkedList{
 		T x; // x adalah isi dari list
 		Node *next; 
 	};
-	private :
-		Node *head;
 	public :
+		Node *head;
 		LinkedList(){
 			head = NULL;
 		}

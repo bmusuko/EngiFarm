@@ -32,8 +32,12 @@ class Game{
 		Cell ***peta;
 		int tick;
 		LinkedList ListFarmAnimal;
+		int n;
+		int m;
+		Player pemain;
 	public :
 		Game();
 		void play();
 		void nextTick();
+		void printPeta();
 }
