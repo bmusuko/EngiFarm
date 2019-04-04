@@ -16,7 +16,6 @@ class Mixer : public Facility{
     public:
         //Konstuktor
         Mixer(int X, int Y);
-
         void use(LinkedList<Product*> LP,int &money, int &water, string masukan);
 
         void isInventAvailable(LinkedList<Product*> LP,bool *isAvail, Product* P1, Product* P2);        

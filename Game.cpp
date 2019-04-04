@@ -194,7 +194,7 @@ void Game::play(){
 							ytemp = AnimalTemp->getY();
 							if(xtemp==pemain.getPosisiX()-1 and ytemp==pemain.getPosisiY()){
 								if(MeatProducingFarmAnimal* v = dynamic_cast<MeatProducingFarmAnimal*>(AnimalTemp)){
-									FarmProduct* temp = AnimalTemp->respondKill();
+									FarmProduct* temp = v->respondKill();
 									pemain.addElTas(temp);
 								}
 								found = true;
@@ -217,7 +217,7 @@ void Game::play(){
 							ytemp = AnimalTemp->getY();
 							if(xtemp==pemain.getPosisiX() and ytemp==pemain.getPosisiY()-1){
 								if(MeatProducingFarmAnimal* v = dynamic_cast<MeatProducingFarmAnimal*>(AnimalTemp)){
-									FarmProduct* temp = AnimalTemp->respondKill();
+									FarmProduct* temp = v->respondKill();
 									pemain.addElTas(temp);
 								}
 								found = true;
@@ -240,7 +240,7 @@ void Game::play(){
 							ytemp = AnimalTemp->getY();
 							if(xtemp==pemain.getPosisiX()+1 and ytemp==pemain.getPosisiY()){
 								if(MeatProducingFarmAnimal* v = dynamic_cast<MeatProducingFarmAnimal*>(AnimalTemp)){
-									FarmProduct* temp = AnimalTemp->respondKill();
+									FarmProduct* temp = v->respondKill();
 									pemain.addElTas(temp);
 								}
 								found = true;
@@ -263,7 +263,7 @@ void Game::play(){
 							ytemp = AnimalTemp->getY();
 							if(xtemp==pemain.getPosisiX() and ytemp==pemain.getPosisiY()+1){
 								if(MeatProducingFarmAnimal* v = dynamic_cast<MeatProducingFarmAnimal*>(AnimalTemp)){
-									FarmProduct* temp = AnimalTemp->respondKill();
+									FarmProduct* temp = v->respondKill();
 									pemain.addElTas(temp);
 								}
 								found = true;
