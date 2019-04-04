@@ -107,6 +107,7 @@ void Game::play(){
 								AnimalTemp->suara();
 								found = true;
 							}
+							i++;
 						}
 					}
 				}
