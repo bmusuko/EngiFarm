@@ -163,29 +163,29 @@ void Game::printPeta(){
 	}
 	for(int i=0;i<n;i++){
 		for(int j=0;j<m;j++){
-			if(typeid(Grassland)==typeid(&Cell[i][j])) {
-   				if(Cell[i][j]->getIsGrassExist()){
+			if(typeid(Grassland)==typeid(&peta[i][j])) {
+   				if(peta[i][j]->getIsGrassExist()){
    					petaTemp[i][j] = '#';
    				} else{
    					petaTemp[i][j] = '-';
    				}
-			} else if(typeid(Barn)==typeid(&Cell[i][j])){
-				if(Cell[i][j]->getIsGrassExist()){
+			} else if(typeid(Barn)==typeid(&peta[i][j])){
+				if(peta[i][j]->getIsGrassExist()){
 					petaTemp[i][j] = '@';
 				} else{
 					petaTemp[i][j] = 'x';
 				}
-			} else if(typeid(Coop)==typeid(&Cell[i][j])){
-				if(Cell[i][j]->getIsGrassExist()){
+			} else if(typeid(Coop)==typeid(&peta[i][j])){
+				if(peta[i][j]->getIsGrassExist()){
 					petaTemp[i][j] = '*';
 				} else{
 					petaTemp[i][j] = 'o';
 				}
-			} else if(typeid(Truck)==typeid(&Cell[i][j])){
+			} else if(typeid(Truck)==typeid(&peta[i][j])){
 				petaTemp[i][j] = 'T';
-			} else if(typeid(Mixer)==typeid(&Cell[i][j])){
+			} else if(typeid(Mixer)==typeid(&peta[i][j])){
 				petaTemp[i][j] = 'M';
-			} else if(typeid(Well)==typeid(&Cell[i][j])){
+			} else if(typeid(Well)==typeid(&peta[i][j])){
 				petaTemp[i][j] = 'W';
 			}
 		}
@@ -230,15 +230,15 @@ void Game::tick(){
 		}
 		AnimalTemp->TryMove(xtemp,ytemp);
 		if(!peta[xtemp][ytemp]->getIsObjectExist()){
-			if(typeid(Barn)==typeid(&Cell[i][j])){
+			if(typeid(Barn)==typeid(&peta[i][j])){
 				if(MeatProducingFarmAnimal* v = dynamic_cast<MeatProducingFarmAnimal*>(&FarmAnimal)){
 					AnimalTemp->move(xtemp,ytemp);
 				}		
-			} else if(typeid(Grassland)==typeid(&Cell[i][j])){
+			} else if(typeid(Grassland)==typeid(&peta[i][j])){
 				if(MilkProducingFarmAnimal* v = dynamic_cast<MilkProducingFarmAnimal*>(&FarmAnimal)){
 					AnimalTemp->move(xtemp,ytemp);
 				}
-			} else if(typeid(Coop)==typeid(&Cell[i][j])){
+			} else if(typeid(Coop)==typeid(&peta[i][j])){
 				if(EggProducingFarmAnimal* v = dynamic_cast<EggProducingFarmAnimal*>(&FarmAnimal)){
 					AnimalTemp->move(xtemp,ytemp);
 				}
