@@ -30,11 +30,11 @@ int Player::getWadahAir() const{
     return wadahAir;
 }
 
-Product Player::getIsiTas(int idx) const{
+Product* Player::getIsiTas(int idx) const{
     return tas.get(idx);
 }
 
-LinkedList<Product> Player::getTas() const{
+LinkedList<Product*> Player::getTas() const{
     return this->tas;
 }
 
@@ -61,11 +61,11 @@ void Player::setWadahAir(int wadahAir){
 }
 
 void Player::addElTas(Product *P){
-    this->tas.add(*P);
+    this->tas.add(P);
 }
 
 void Player::delElTas(Product *P){
-    this->tas.remove(*P);
+    this->tas.remove(P);
 }
 
 void Player::setMoney(int money){
@@ -90,7 +90,7 @@ void Player::kill(MeatProducingFarmAnimal* hewan){
     this->addElTas(hewan->respondKill()); //keknya udah bener
 }
 
-void Player::grow(Cell* L){
+void Player::grow(Land* L){
     L->setIsGrassExist(true);
 }
 
