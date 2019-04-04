@@ -80,7 +80,6 @@ Game::Game(){
 		}
 	}
 }
-
 void Game::play(){
 	cout<<"Selamat datang di Engi's Farm"<<endl;
 	printPeta();
