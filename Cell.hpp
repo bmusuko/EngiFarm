@@ -20,6 +20,8 @@ class Cell{
 
         virtual bool getIsGrassExist() const = 0;
         virtual bool getIsObjectExist () const = 0;
+        virtual void setIsGrassExist(bool grass) = 0;
+        virtual void setIsObjectExist(bool object) = 0;
 };
 
 #endif

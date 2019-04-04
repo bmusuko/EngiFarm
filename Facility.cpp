@@ -8,3 +8,6 @@ bool Facility::getIsGrassExist() const{
 bool Facility::getIsObjectExist () const{
     return false;
 }
+
+void Facility::setIsGrassExist(bool grass){}
+void Facility::setIsObjectExist(bool object){}
