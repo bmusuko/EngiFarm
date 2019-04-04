@@ -15,7 +15,7 @@ class Player{
     private:
         int posisiX; //Sementara, gua gatau posisi enaknya taro di player apa di cell
         int posisiY;
-        int wadahAir;
+        int wadahAir;   //Asumsi wadah air maksimal = 10
         int money;
         LinkedList<Product> tas;
     public:

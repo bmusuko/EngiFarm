@@ -10,7 +10,7 @@ class Truck : public Facility{
         //Konstuktor
         Truck(int X, int Y);
 
-        void use(LinkedList<Product> LP,int money, int water, string masukan);
+        void use(LinkedList<Product> LP,int &money, int &water, string masukan);
 };
 
 #endif

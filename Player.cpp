@@ -6,7 +6,7 @@ using namespace std;
 Player::Player(){
     posisiX = 0;
     posisiY = 0;
-    wadahAir = 0;
+    wadahAir = 10;
     money = 0;
 }
 

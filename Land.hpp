@@ -7,15 +7,14 @@ class Land: public Cell{
         bool isObjectExist; //Boolean untuk mengecek apakah ada player atau objek lainnya pada petak tersebut
         bool isGrassExist;  //Boolean untuk mengecek apakah ada rumput atau tidak
     public:
-        //Konstruktor
+        // Konstruktor
         Land(int X, int Y, bool grass, bool object);
-        //Setter & Getter
+        // Setter & Getter
         bool getIsGrassExist() const;
         bool getIsObjectExist () const;
         int getLandType() const;
         void setIsGrassExist(bool grass);
         void setIsObjectExist(bool object);
-
 };
 
 #endif
