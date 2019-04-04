@@ -72,10 +72,6 @@ void Player::setMoney(int money){
     this->money = money;
 }
 
-void Player::talk(FarmAnimal* hewan){
-    hewan->suara();
-}
-
 void Player::interact(MilkProducingFarmAnimal* hewan){
     this->addElTas(hewan->respondInteract()); //keknya udah bener
 }
@@ -84,10 +80,6 @@ void Player::interact(EggProducingFarmAnimal* hewan){
 }
 void Player::interact(Facility* facility, string masukan){
     facility->use(this->tas,this->money,this->wadahAir,masukan);    //keknya udah bener
-}
-
-void Player::kill(MeatProducingFarmAnimal* hewan){
-    this->addElTas(hewan->respondKill()); //keknya udah bener
 }
 
 void Player::grow(Land* L){

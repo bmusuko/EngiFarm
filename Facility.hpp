@@ -2,7 +2,8 @@
 #define __FACILITY_HPP__
 
 #include "Cell.hpp"
-#include "Player.hpp"
+#include "LinkedList.hpp"
+#include "Product.hpp"
 
 class Facility: public Cell{
     public:

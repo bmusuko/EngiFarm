@@ -5,8 +5,6 @@
 #include<fstream>
 using namespace std;
 
-
-
 Game::Game(){
     ifstream petaInput;  
     petaInput.open("peta.txt");
