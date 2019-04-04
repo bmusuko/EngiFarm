@@ -53,7 +53,7 @@ class Player{
         void interact(EggProducingFarmAnimal* hewan);
         void interact(Facility* facility, string masukan);
         void kill(MeatProducingFarmAnimal* hewan);
-        void grow(Land* L);
+        void grow(Cell* L);
         void move(int arah);
         //Method move buat gerak, arah 1 = atas, 2= kanan, 3 = bawah, 4 = kiri
 };

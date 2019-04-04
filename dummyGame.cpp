@@ -136,8 +136,7 @@ void Game::play(){
 		} else if(input == "kill right"){
 
 		} else if(input == "grow"){
-			// peta[pemain.getPosisiX()-1][pemain.getPosisiY()]
-
+			pemain.grow(peta[pemain.getPosisiX()-1][pemain.getPosisiY()]);
 		} else if(input == "well up"){
 
 		} else if(input == "well left"){
