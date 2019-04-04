@@ -41,4 +41,6 @@ class Game{
 		void nextTick();
 		void printPeta();
 		void tutorial();
+		void keterangan();
+		void listCommand();
 }

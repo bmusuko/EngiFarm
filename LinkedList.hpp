@@ -6,14 +6,16 @@ using namespace std;
 
 template <class T>
 class LinkedList{
-	struct Node{
-		T x; // x adalah isi dari list
-		Node *next; 
-	};
 	public :
+		struct Node{
+			T x; // x adalah isi dari list
+			Node *next; 
+		};
 		Node *head;
+		int size;
 		LinkedList(){
 			head = NULL;
+			size = 0;
 		}
 		
 		LinkedList(const LinkedList& L){
@@ -70,6 +72,7 @@ class LinkedList{
 				}
 				P->next = node;
 			}
+			size++;
 		}
 
 		int find(T element) const{
@@ -122,6 +125,7 @@ class LinkedList{
 					delete P;					
 				}
 			}
+			size--;
 		}	
 
 		void PrintList() const{

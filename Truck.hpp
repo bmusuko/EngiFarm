@@ -5,12 +5,14 @@
 
 class Truck : public Facility{
     private:
-        
+        int cooldown;
     public:
         //Konstuktor
         Truck(int X, int Y);
 
-        void use(LinkedList<Product> LP,int money, int water);
+        void minCD();
+
+        void use(LinkedList<Product> LP,int &money, int &water, string masukan);
 };
 
 #endif

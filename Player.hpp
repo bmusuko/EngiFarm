@@ -15,7 +15,7 @@ class Player{
     private:
         int posisiX; //Sementara, gua gatau posisi enaknya taro di player apa di cell
         int posisiY;
-        int wadahAir;
+        int wadahAir;   //Asumsi wadah air maksimal = 10
         int money;
         LinkedList<Product> tas;
     public:
@@ -51,7 +51,7 @@ class Player{
         void talk(FarmAnimal* hewan);
         void interact(MilkProducingFarmAnimal* hewan);
         void interact(EggProducingFarmAnimal* hewan);
-        void interact(Facility* facility);
+        void interact(Facility* facility, string masukan);
         void kill(MeatProducingFarmAnimal* hewan);
         void grow(Land* L);
         void move(int arah);

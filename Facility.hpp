@@ -9,9 +9,8 @@ class Facility: public Cell{
         //Konstruktor
         Facility(int X, int Y);
 
-
         //Fungsi virtual
-        virtual void use(LinkedList<Product> LP,int money, int water) = 0;
+        virtual void use(LinkedList<Product> LP,int &money, int &water, string masukan) = 0;
 
 };
 

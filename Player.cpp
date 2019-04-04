@@ -6,7 +6,7 @@ using namespace std;
 Player::Player(){
     posisiX = 0;
     posisiY = 0;
-    wadahAir = 0;
+    wadahAir = 10;
     money = 0;
 }
 
@@ -82,8 +82,8 @@ void Player::interact(MilkProducingFarmAnimal* hewan){
 void Player::interact(EggProducingFarmAnimal* hewan){
     this->addElTas(hewan->respondInteract()); //keknya udah bener
 }
-void Player::interact(Facility* facility){
-    facility->use(this->tas,this->money,this->wadahAir);    //keknya udah bener
+void Player::interact(Facility* facility, string masukan){
+    facility->use(this->tas,this->money,this->wadahAir,masukan);    //keknya udah bener
 }
 
 void Player::kill(MeatProducingFarmAnimal* hewan){

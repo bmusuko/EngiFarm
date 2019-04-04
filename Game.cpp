@@ -87,11 +87,74 @@ void Game::play(){
 	cout<<"Selamat datang di Engi's Farm"<<endl;
 	printPeta();
 	string input;
+	tutorial();
 	cout<<"Masukkan inputan permainan :";
 	cin>>input;
+	while(input != "exit"){
+		if(input == "talk up"){
+
+		} else if(input == "talk left"){
+
+		} else if(input == "talk down"){
+
+		} else if(input == "talk right"){
+
+		} else if(input == "interract up"){
+
+		} else if(input == "interract left"){
+
+		} else if(input == "interract down"){
+
+		} else if(input == "interract right"){
+
+		} else if(input == "kill up"){
+
+		} else if(input == "kill left"){
+
+		} else if(input == "kill down"){
+
+		} else if(input == "kill right"){
+
+		} else if(input == "grow"){
+
+		} else if(input == "well up"){
+
+		} else if(input == "well left"){
+
+		} else if(input == "well down"){
+
+		} else if(input == "well right"){
+
+		} else if(input == "sell up"){
+
+		} else if(input == "sell left"){
+
+		} else if(input == "sell down"){
+
+		} else if(input == "sell right"){
+
+		} else if(input == "mix up"){
+
+		} else if(input == "mix left"){
+
+		} else if(input == "mix down"){
+
+		} else if(input == "mix right"){
+
+		} else if(input == "tutorial"){
+
+		} else if(input == "keterangan"){
+
+		} else if(input == "listCommand"){
+
+		} else if(input == "exit"){
+
+		} else{
+			cout<<"input error"<<endl;
+		}
+		cin>>input;
+	}
 }
-
-
 void Game::printPeta(){
 	char**petaTemp;
 	petaTemp = new char*[n];
@@ -128,10 +191,9 @@ void Game::printPeta(){
 		}
 	}
 	FarmAnimal* AnimalTemp;
-	Node *P = ListFarmAnimal;
 	int xtemp,ytemp;
-	while(P != NULL){
-		AnimalTemp = &(P->x);
+	for(int i=0;i<ListFarmAnimal.size;i++){
+		AnimalTemp = &(ListFarmAnimal.get(i));
 		xtemp = AnimalTemp->getX();
 		ytemp = AnimalTemp->getY();
 		if(typeid(Ayam)==typeid(&AnimalTemp)){
@@ -153,13 +215,11 @@ void Game::printPeta(){
 		
 void Game::tick(){
 	FarmAnimal* AnimalTemp;
-	Node *P = ListFarmAnimal;
-	int xtemp,ytemp,xtemp2,ytemp2;
-	while(P){
+	int xtemp,ytemp;
+	for(int i=0;i<ListFarmAnimal.size;i++){
+		AnimalTemp = &(ListFarmAnimal.get(i));
 		xtemp = AnimalTemp->getX();
 		ytemp = AnimalTemp->getY();
-		// xtemp2 = xtemp;
-		// ytemp2 = ytemp;
 		AnimalTemp = &(P->x);
 		AnimalTemp->setLapar((AnimalTemp->getLapar())-1);
 		if(AnimalTemp->isLapar()){
@@ -188,5 +248,37 @@ void Game::tick(){
 }
 
 void Game::tutorial(){
-	
+	cout<<"selamat datang di dalam tutorial"<<endl;
+	keterangan();
+	listCommand();
+}
+
+void Game::keterangan(){
+	cout<<"Keterangan"<<endl;
+	cout<<"A : Ayam"<<endl;
+	cout<<"D : Bebek"<<endl;
+	cout<<"B : Kerbau"<<endl;
+	cout<<"S : Domba"<<endl;
+	cout<<"C : Sapi"<<endl;
+	cout<<"G : Kambing"<<endl;
+	cout<<"P : Player"<<endl;
+	cout<<"- : Grassland"<<endl;
+	cout<<"x : Barn"<<endl;
+	cout<<"o : Coop"<<endl;
+	cout<<"*,@,# : Land dengan rumput"<<endl;
+}
+
+
+void Game::listCommand(){
+	cout<<"talk"<<endl;
+	cout<<"interract"<<endl;
+	cout<<"kill"<<endl;
+	cout<<"grow"<<endl;
+	cout<<"well"<<endl;
+	cout<<"sell"<<endl;
+	cout<<"mix"<<endl;
+	cout<<"tutorial"<<endl;
+	cout<<"keterangan"<<endl;
+	cout<<"listCommand"<<endl;
+	cout<<"exit"<<endl;
 }
