@@ -17,6 +17,7 @@ Game::Game(){
 	for(int i=0;i<n;i++){
 		peta[i] = new Cell*[m];
 	}
+	string temp;
 	for(int i=0;i<n;i++){
 		petaInput>>temp;
 		for(int j=0;j<m;j++){
@@ -90,15 +91,16 @@ void Game::play(){
 	tutorial();
 	cout<<"Masukkan inputan permainan :";
 	cin>>input;
-	boolean found;
+	bool found;
 	int xtemp,ytemp,i;
 	while(input != "exit"){
 		if(input == "talk up"){
 			if(isInRange(P.getPosisiX()-1,P.getPosisiY())){
-				if(isLand(x,y)){
-					if(peta[x][y]->getIsObjectExist()){
+				if(isLand(P.getPosisiX()-1,P.getPosisiY())){
+					if(peta[P.getPosisiX()-1][P.getPosisiY()]->getIsObjectExist()){
 						found = false;
 						i = 0;
+						FarmAnimal* AnimalTemp;
 						while(!found and i <ListFarmAnimal.size){
 							AnimalTemp = &(ListFarmAnimal.get(i));
 							xtemp = AnimalTemp->getX();
