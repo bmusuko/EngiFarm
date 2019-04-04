@@ -17,7 +17,7 @@ class Player{
         int posisiY;
         int wadahAir;   //Asumsi wadah air maksimal = 10
         int money;
-        LinkedList<Product> tas;
+        LinkedList<Product*> tas;
     public:
         //Konstruktor  
         Player();
@@ -33,8 +33,8 @@ class Player{
 
         //Setter Getter
         int getWadahAir() const;
-        Product getIsiTas(int idx) const;
-        LinkedList<Product> getTas() const;
+        Product* getIsiTas(int idx) const;
+        LinkedList<Product*> getTas() const;
         int getMoney() const;
         static int getTick();
         int getPosisiX() const;
@@ -53,7 +53,7 @@ class Player{
         void interact(EggProducingFarmAnimal* hewan);
         void interact(Facility* facility, string masukan);
         void kill(MeatProducingFarmAnimal* hewan);
-        void grow(Cell* L);
+        void grow(Land* L);
         void move(int arah);
         //Method move buat gerak, arah 1 = atas, 2= kanan, 3 = bawah, 4 = kiri
 };
