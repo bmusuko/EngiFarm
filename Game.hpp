@@ -40,4 +40,5 @@ class Game{
 		void play();
 		void nextTick();
 		void printPeta();
+		void tutorial();
 }

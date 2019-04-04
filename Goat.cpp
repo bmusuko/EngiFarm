@@ -17,12 +17,12 @@ void Goat::suara() {
 }
 FarmProduct* Goat::respondInteract() {
     setHasilProduct(false);
-    GoatMilk G;
+    static GoatMilk G;
     return &G;
 }
 FarmProduct* Goat::respondKill() {
     delete this;
-    GoatMeat C;
+    static GoatMeat C;
     return &C;
 }
 int Goat::getGoatAlive() {

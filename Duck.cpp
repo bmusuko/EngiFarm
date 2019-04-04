@@ -17,12 +17,12 @@ void Duck::suara() {
 }
 FarmProduct* Duck::respondInteract() {
     setHasilProduct(false);
-    DuckEgg G ;
+    static DuckEgg G ;
     return &G;
 }
 FarmProduct* Duck::respondKill() {
     delete this;
-    DuckMeat C;
+    static DuckMeat C;
     return &C;
 }
 int Duck::getDuckAlive() {

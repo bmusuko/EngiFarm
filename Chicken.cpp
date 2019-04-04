@@ -18,12 +18,12 @@ void Chicken::suara() {
 
 FarmProduct* Chicken::respondInteract() {
     FarmAnimal::setHasilProduct(false);
-    ChickenEgg G;
+    static ChickenEgg G;
     return &G;
 }
 FarmProduct* Chicken::respondKill() {
     delete this;
-    ChickenMeat C;
+    static ChickenMeat C;
     return &C;
 }
 int Chicken::getChickenAlive() {

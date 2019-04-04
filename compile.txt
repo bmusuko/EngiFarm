@@ -1,0 +1,1 @@
+g++ MeatProducingFarmAnimal.cpp EggProducingFarmAnimal.cpp MilkProducingFarmAnimal.cpp FarmAnimal.cpp Chicken.cpp Buffalo.cpp Cow.cpp Duck.cpp Goat.cpp Sheep.cpp -c

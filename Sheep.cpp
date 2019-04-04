@@ -15,7 +15,7 @@ void Sheep::suara(){
 } //cout "pukpuk"
 FarmProduct* Sheep::respondKill(){
 	delete this;
-	SheepMeat B;
+	static SheepMeat B;
 	return &B;
 } //SheepAlive-1
 int Sheep::getSheepAlive(){

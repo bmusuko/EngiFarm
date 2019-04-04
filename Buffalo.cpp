@@ -15,7 +15,7 @@ void Buffalo::suara(){
 } //cout "pukpuk"
 FarmProduct* Buffalo::respondKill(){
 	delete this;
-	BuffaloMeat B;
+	static BuffaloMeat B;
 	return &B;
 } //BuffaloAlive-1
 int Buffalo::getBuffaloAlive(){

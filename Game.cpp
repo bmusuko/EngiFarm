@@ -85,6 +85,10 @@ Game::Game(){
 
 void Game::play(){
 	cout<<"Selamat datang di Engi's Farm"<<endl;
+	printPeta();
+	string input;
+	cout<<"Masukkan inputan permainan :";
+	cin>>input;
 }
 
 
@@ -166,19 +170,23 @@ void Game::tick(){
 		}
 		AnimalTemp->TryMove(xtemp,ytemp);
 		if(!peta[xtemp][ytemp]->getIsObjectExist()){
-			if(Barn* v = dynamic_cast<Barn*>(&peta[xtemp][ytemp])){
+			if(typeid(Barn)==typeid(&Cell[i][j])){
 				if(MeatProducingFarmAnimal* v = dynamic_cast<MeatProducingFarmAnimal*>(&FarmAnimal)){
 					AnimalTemp->move(xtemp,ytemp);
 				}		
-			} else if(Grassland* v = dynamic_cast<Grassland*>(&peta[xtemp][ytemp])){
+			} else if(typeid(Grassland)==typeid(&Cell[i][j])){
 				if(MilkProducingFarmAnimal* v = dynamic_cast<MilkProducingFarmAnimal*>(&FarmAnimal)){
 					AnimalTemp->move(xtemp,ytemp);
 				}
-			} else if(Coop* v = dynamic_cast<Coop*>(&peta[xtemp][ytemp])){
+			} else if(typeid(Coop)==typeid(&Cell[i][j])){
 				if(EggProducingFarmAnimal* v = dynamic_cast<EggProducingFarmAnimal*>(&FarmAnimal)){
 					AnimalTemp->move(xtemp,ytemp);
 				}
 			}
 		}
 	}
+}
+
+void Game::tutorial(){
+	
 }
