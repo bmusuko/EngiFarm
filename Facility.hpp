@@ -11,6 +11,8 @@ class Facility: public Cell{
 
         //Fungsi virtual
         virtual void use(LinkedList<Product> LP,int &money, int &water, string masukan) = 0;
+        bool getIsGrassExist() const;
+        bool getIsObjectExist () const;
 
 };
 

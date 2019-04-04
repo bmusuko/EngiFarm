@@ -12,7 +12,6 @@ class Land: public Cell{
         // Setter & Getter
         bool getIsGrassExist() const;
         bool getIsObjectExist () const;
-        int getLandType() const;
         void setIsGrassExist(bool grass);
         void setIsObjectExist(bool object);
 };

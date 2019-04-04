@@ -17,6 +17,9 @@ class Cell{
         //Setter
         void setX(int X);
         void setY(int Y);
+
+        virtual bool getIsGrassExist() const = 0;
+        virtual bool getIsObjectExist () const = 0;
 };
 
 #endif
