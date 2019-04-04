@@ -5,6 +5,6 @@
 
 using namespace std;
 
-CowMilk::CowMilk() {
+CowMilk::CowMilk() : FarmProduct(){
     harga = 20000;
 }

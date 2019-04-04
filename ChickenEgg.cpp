@@ -5,6 +5,6 @@
 
 using namespace std;
 
-ChickenEgg::ChickenEgg() {
+ChickenEgg::ChickenEgg() : FarmProduct(){
     harga = 20000;
 }
