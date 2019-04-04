@@ -10,8 +10,15 @@ class Mixer : public Facility{
         //Konstuktor
         Mixer(int X, int Y);
 
-        void use(LinkedList<Product> LP,int &money, int &water, string masukan);
-    
+        void use(LinkedList<Product> LP);
+        
+        void isInventAvailable(LinkedList<Product> LP,bool *isAvail, Product P1, Product P2);
+        
+        void createMartabak(LinkedList<Product> LP);
+        
+        void createCheese(LinkedList<Product> LP);
+        
+        void createBeefRolade(LinkedList<Product> LP);
 };
 
 #endif
