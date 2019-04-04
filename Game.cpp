@@ -13,7 +13,6 @@ Game::Game(){
 	petaInput>>n;
 	petaInput>>m;
 	peta = new Cell**[n];
-	pemain = new Player();
 	for(int i=0;i<n;i++){
 		peta[i] = new Cell*[m];
 	}
@@ -33,31 +32,32 @@ Game::Game(){
 			} else if (temp[j] == '#'){
 				Grassland G(i,j,true,false);
 				peta[i][j] = &G;
-			} else if (temp == 'x'){
+			} else if (temp[j] == 'x'){
 				Barn B(i,j,false,false);
 				peta[i][j] = &B;
-			} else if (temp == '@'){
+			} else if (temp[j] == '@'){
 				Barn B(i,j,true,false);
 				peta[i][j] == &B;
-			} else if (temp == 'T'){
+			} else if (temp[j] == 'T'){
 				Truck T(i,j);
 				peta[i][j] = &T;
-			} else if (temp == 'M'){
+			} else if (temp[j] == 'M'){
 				Mixer M(i,j);
 				peta[i][j] = &M;
-			} else if (temp == 'W'){
+			} else if (temp[j] == 'W'){
 				Well W(i,j);
 				peta[i][j] = &W;
 			}
 		}
 	}
-	ListFarmAnimal = new LinkedList<FarmAnimal*>;
 	ifstream dllInput;
 	dllInput.open("dll.txt");
-	while(!dll.eof()){
-		dll>>c;
-		dll>>x;
-		dll>>y;
+	char c;
+	int x,y;
+	while(!dllInput.eof()){
+		dllInput>>c;
+		dllInput>>x;
+		dllInput>>y;
 		if(c == 'A'){
 			Chicken C(x,y);
 			ListFarmAnimal.add(&C);
@@ -101,7 +101,7 @@ void Game::play(){
 						i = 0;
 						FarmAnimal* AnimalTemp;
 						while(!found and i <ListFarmAnimal.size){
-							AnimalTemp = &(ListFarmAnimal.get(i));
+							AnimalTemp = (ListFarmAnimal.get(i));
 							xtemp = AnimalTemp->getX();
 							ytemp = AnimalTemp->getY();
 							if(xtemp==pemain.getPosisiX()-1 and ytemp==pemain.getPosisiY()){
@@ -214,12 +214,12 @@ void Game::printPeta(){
 	FarmAnimal* AnimalTemp;
 	int xtemp,ytemp;
 	for(int i=0;i<ListFarmAnimal.size;i++){
-		AnimalTemp = &(ListFarmAnimal.get(i));
+		AnimalTemp = (ListFarmAnimal.get(i));
 		xtemp = AnimalTemp->getX();
 		ytemp = AnimalTemp->getY();
-		if(typeid(Ayam)==typeid(&AnimalTemp)){
+		if(typeid(Chicken)==typeid(&AnimalTemp)){
 			petaTemp[xtemp][ytemp] = 'A';
-		} else if (typeid(Duck) == (&AnimalTemp)){
+		} else if (typeid(Duck) == typeid(&AnimalTemp)){
 			petaTemp[xtemp][ytemp] = 'D';
 		} else if(typeid(Buffalo) == typeid(&AnimalTemp)){
 			petaTemp[xtemp][ytemp] = 'B';
@@ -234,33 +234,32 @@ void Game::printPeta(){
 	petaTemp[pemain.getPosisiX()][pemain.getPosisiY()] = 'P';
 }
 		
-void Game::tick(){
+void Game::nextTick(){
 	FarmAnimal* AnimalTemp;
 	int xtemp,ytemp;
 	for(int i=0;i<ListFarmAnimal.size;i++){
-		AnimalTemp = &(ListFarmAnimal.get(i));
+		AnimalTemp = (ListFarmAnimal.get(i));
 		xtemp = AnimalTemp->getX();
 		ytemp = AnimalTemp->getY();
-		AnimalTemp = &(P->x);
 		AnimalTemp->setLapar((AnimalTemp->getLapar())-1);
 		if(AnimalTemp->isLapar()){
-			if(peta[xtemp][ytemp].getIsGrassExist()){
+			if(peta[xtemp][ytemp]->getIsGrassExist()){
 				AnimalTemp->eat();
-				peta[xtemp][ytemp].setIsGrassExist(false);
+				peta[xtemp][ytemp]->setIsGrassExist(false);
 			}
 		}
 		AnimalTemp->TryMove(xtemp,ytemp);
 		if(!peta[xtemp][ytemp]->getIsObjectExist()){
-			if(typeid(Barn)==typeid(&peta[i][j])){
-				if(MeatProducingFarmAnimal* v = dynamic_cast<MeatProducingFarmAnimal*>(&FarmAnimal)){
+			if(typeid(Barn)==typeid(&peta[xtemp][ytemp])){
+				if(MeatProducingFarmAnimal* v = dynamic_cast<MeatProducingFarmAnimal*>(AnimalTemp)){
 					AnimalTemp->move(xtemp,ytemp);
 				}		
-			} else if(typeid(Grassland)==typeid(&peta[i][j])){
-				if(MilkProducingFarmAnimal* v = dynamic_cast<MilkProducingFarmAnimal*>(&FarmAnimal)){
+			} else if(typeid(Grassland)==typeid(&peta[xtemp][ytemp])){
+				if(MilkProducingFarmAnimal* v = dynamic_cast<MilkProducingFarmAnimal*>(AnimalTemp)){
 					AnimalTemp->move(xtemp,ytemp);
 				}
-			} else if(typeid(Coop)==typeid(&peta[i][j])){
-				if(EggProducingFarmAnimal* v = dynamic_cast<EggProducingFarmAnimal*>(&FarmAnimal)){
+			} else if(typeid(Coop)==typeid(&peta[xtemp][ytemp])){
+				if(EggProducingFarmAnimal* v = dynamic_cast<EggProducingFarmAnimal*>(AnimalTemp)){
 					AnimalTemp->move(xtemp,ytemp);
 				}
 			}
