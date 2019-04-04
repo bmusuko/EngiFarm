@@ -83,7 +83,7 @@ Game::Game(){
 void Game::play(){
 	cout<<"Selamat datang di Engi's Farm"<<endl;
 	printPeta();
-	string input,input2;
+	string input;
 	tutorial();
 	cout<<"Masukkan inputan permainan :";
 	cin>>input;
