@@ -13,3 +13,7 @@ void Product::setHarga(int h) {
     this->harga = h;
 }
 
+// bool Product::operator==(Product &){
+//     return (product1 == product2);
+// }
+    

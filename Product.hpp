@@ -17,6 +17,7 @@ class Product {
         int getHarga() const;
         // int getnProduct() const;
         void setHarga(int h);
+        //bool operator ==(Product product1, Product product2);
         
 
 };
