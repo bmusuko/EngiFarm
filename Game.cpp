@@ -84,14 +84,38 @@ Game::Game(){
 void Game::play(){
 	cout<<"Selamat datang di Engi's Farm"<<endl;
 	printPeta();
-	string input;
+	string input,input2;
 	tutorial();
 	cout<<"Masukkan inputan permainan :";
 	cin>>input;
 	bool found;
 	int xtemp,ytemp,i;
 	while(input != "exit"){
-		if(input == "talk up"){
+		if (input == "move up"){
+			if(isInRange(pemain.getPosisiX()-1,pemain.getPosisiY())){
+				if(isLand(pemain.getPosisiX()-1,pemain.getPosisiY())){
+					pemain.move(1);
+				}
+			}
+		}else if(input == "move left"){
+			if(isInRange(pemain.getPosisiX(),pemain.getPosisiY()-1)){
+				if(isLand(pemain.getPosisiX(),pemain.getPosisiY()-1)){
+					pemain.move(4);
+				}
+			}
+		}else if(input == "move down"){
+			if(isInRange(pemain.getPosisiX()+1,pemain.getPosisiY())){
+				if(isLand(pemain.getPosisiX()+1,pemain.getPosisiY())){
+					pemain.move(3);
+				}
+			}
+		}else if(input == "move right"){
+			if(isInRange(pemain.getPosisiX(),pemain.getPosisiY()+1)){
+				if(isLand(pemain.getPosisiX(),pemain.getPosisiY()+1)){
+					pemain.move(2);
+				}
+			}
+		}else if(input == "talk up"){
 			if(isInRange(pemain.getPosisiX()-1,pemain.getPosisiY())){
 				if(isLand(pemain.getPosisiX()-1,pemain.getPosisiY())){
 					if(peta[pemain.getPosisiX()-1][pemain.getPosisiY()]->getIsObjectExist()){
