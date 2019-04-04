@@ -114,11 +114,65 @@ void Game::play(){
 				}
 			}
 		} else if(input == "talk left"){
-
+			if(isInRange(pemain.getPosisiX(),pemain.getPosisiY()-1)){
+				if(isLand(pemain.getPosisiX(),pemain.getPosisiY()-1)){
+					if(peta[pemain.getPosisiX()][pemain.getPosisiY()-1]->getIsObjectExist()){
+						found = false;
+						i = 0;
+						FarmAnimal* AnimalTemp;
+						while(!found and i <ListFarmAnimal.size){
+							AnimalTemp = (ListFarmAnimal.get(i));
+							xtemp = AnimalTemp->getX();
+							ytemp = AnimalTemp->getY();
+							if(xtemp==pemain.getPosisiX() and ytemp==pemain.getPosisiY()-1){
+								AnimalTemp->suara();
+								found = true;
+							}
+							i++;
+						}
+					}
+				}
+			}
 		} else if(input == "talk down"){
-
+			if(isInRange(pemain.getPosisiX()+1,pemain.getPosisiY())){
+				if(isLand(pemain.getPosisiX()+1,pemain.getPosisiY())){
+					if(peta[pemain.getPosisiX()+1][pemain.getPosisiY()]->getIsObjectExist()){
+						found = false;
+						i = 0;
+						FarmAnimal* AnimalTemp;
+						while(!found and i <ListFarmAnimal.size){
+							AnimalTemp = (ListFarmAnimal.get(i));
+							xtemp = AnimalTemp->getX();
+							ytemp = AnimalTemp->getY();
+							if(xtemp==pemain.getPosisiX()+1 and ytemp==pemain.getPosisiY()){
+								AnimalTemp->suara();
+								found = true;
+							}
+							i++;
+						}
+					}
+				}
+			}
 		} else if(input == "talk right"){
-
+			if(isInRange(pemain.getPosisiX(),pemain.getPosisiY()+1)){
+				if(isLand(pemain.getPosisiX(),pemain.getPosisiY()+1)){
+					if(peta[pemain.getPosisiX()][pemain.getPosisiY()+1]->getIsObjectExist()){
+						found = false;
+						i = 0;
+						FarmAnimal* AnimalTemp;
+						while(!found and i <ListFarmAnimal.size){
+							AnimalTemp = (ListFarmAnimal.get(i));
+							xtemp = AnimalTemp->getX();
+							ytemp = AnimalTemp->getY();
+							if(xtemp==pemain.getPosisiX() and ytemp==pemain.getPosisiY()+1){
+								AnimalTemp->suara();
+								found = true;
+							}
+							i++;
+						}
+					}
+				}
+			}
 		} else if(input == "interract up"){
 
 		} else if(input == "interract left"){
