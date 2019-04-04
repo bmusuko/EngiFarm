@@ -92,7 +92,9 @@ void Game::play(){
 	cin>>input;
 	while(input != "exit"){
 		if(input == "talk up"){
-
+			if(isInRange(P.getPosisiX()-1,P.getPosisiY())){
+				if(peta[i][j]->)
+			}
 		} else if(input == "talk left"){
 
 		} else if(input == "talk down"){
@@ -281,4 +283,8 @@ void Game::listCommand(){
 	cout<<"keterangan"<<endl;
 	cout<<"listCommand"<<endl;
 	cout<<"exit"<<endl;
+}
+
+void Game::isInRange(int x,int y){
+	return ( (x>=0) && (x<n) &&  (y>=0) && (y<m) );
 }
