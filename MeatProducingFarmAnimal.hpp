@@ -5,7 +5,7 @@
 using namespace std;
 #include "FarmProduct.hpp"
 
-class MeatProducingFarmAnimal: public FarmAnimal{
+class MeatProducingFarmAnimal: virtual public FarmAnimal{
     public:
         //buat kill hewan dan buat objek meat
         MeatProducingFarmAnimal();

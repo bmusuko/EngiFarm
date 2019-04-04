@@ -7,7 +7,6 @@ using namespace std;
 int Duck::DuckAlive = 0;
 
 Duck::Duck(int x,int y):FarmAnimal(x,y,6) {
-    lapar_max = 6;
     DuckAlive++;
 }
 Duck::~Duck() {
@@ -22,7 +21,7 @@ FarmProduct* Duck::respondInteract() {
     return &G;
 }
 FarmProduct* Duck::respondKill() {
-    ~Duck();
+    delete this;
     DuckMeat C;
     return &C;
 }

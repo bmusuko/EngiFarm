@@ -7,7 +7,7 @@ class Sheep : public MeatProducingFarmAnimal {
     protected:
         static int SheepAlive;
     public:
-    	Sheep();
+    	Sheep(int x,int y);
     	~Sheep();
         void suara(); //cout "mbee mbee"
         FarmProduct* respondKill(); //SheepAlive-1

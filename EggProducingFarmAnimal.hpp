@@ -5,11 +5,11 @@
 using namespace std;
 #include "FarmProduct.hpp"
 
-class EggProducingFarmAnimal: public FarmAnimal{
+class EggProducingFarmAnimal: virtual public FarmAnimal{
     public: 
         //ctor buat set IsEggProducing = true;
         //buat kill hewan dan buat objek egg
-        EggProducingFarmAnimal(int x,int y,int lapar);
+        EggProducingFarmAnimal();
 	    virtual FarmProduct* respondInteract() = 0;
 };
 

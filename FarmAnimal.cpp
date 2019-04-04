@@ -3,11 +3,12 @@ using namespace std;
 #include <cstdlib>
 #include <ctime>
 
-FarmAnimal::FarmAnimal(int x,int y,int lapar){
+FarmAnimal::FarmAnimal(int x,int y,int lapar_max){
 	hasilProduct = false;
 	this-> x = x;
 	this-> y = y;
-	this-> lapar = lapar;
+	this-> lapar = lapar_max;
+	this->lapar = lapar_max;
 }
 
 void FarmAnimal::TryMove(int &x,int &y){
