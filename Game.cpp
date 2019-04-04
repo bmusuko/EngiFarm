@@ -182,48 +182,105 @@ void Game::play(){
 		} else if(input == "interract right"){
 
 		} else if(input == "kill up"){
-
+			if(isInRange(pemain.getPosisiX()-1,pemain.getPosisiY())){
+				if(isLand(pemain.getPosisiX()-1,pemain.getPosisiY())){
+					if(peta[pemain.getPosisiX()-1][pemain.getPosisiY()]->getIsObjectExist()){
+						found = false;
+						i = 0;
+						FarmAnimal* AnimalTemp;
+						while(!found and i <ListFarmAnimal.size){
+							AnimalTemp = (ListFarmAnimal.get(i));
+							xtemp = AnimalTemp->getX();
+							ytemp = AnimalTemp->getY();
+							if(xtemp==pemain.getPosisiX()-1 and ytemp==pemain.getPosisiY()){
+								if(MeatProducingFarmAnimal* v = dynamic_cast<MeatProducingFarmAnimal*>(AnimalTemp)){
+									FarmProduct* temp = AnimalTemp->respondKill();
+									pemain.addElTas(temp);
+								}
+								found = true;
+							}
+							i++;
+						}
+					}
+				}
+			}
 		} else if(input == "kill left"){
-
+			if(isInRange(pemain.getPosisiX(),pemain.getPosisiY()-1)){
+				if(isLand(pemain.getPosisiX(),pemain.getPosisiY()-1)){
+					if(peta[pemain.getPosisiX()][pemain.getPosisiY()-1]->getIsObjectExist()){
+						found = false;
+						i = 0;
+						FarmAnimal* AnimalTemp;
+						while(!found and i <ListFarmAnimal.size){
+							AnimalTemp = (ListFarmAnimal.get(i));
+							xtemp = AnimalTemp->getX();
+							ytemp = AnimalTemp->getY();
+							if(xtemp==pemain.getPosisiX() and ytemp==pemain.getPosisiY()-1){
+								if(MeatProducingFarmAnimal* v = dynamic_cast<MeatProducingFarmAnimal*>(AnimalTemp)){
+									FarmProduct* temp = AnimalTemp->respondKill();
+									pemain.addElTas(temp);
+								}
+								found = true;
+							}
+							i++;
+						}
+					}
+				}
+			}
 		} else if(input == "kill down"){
-
+			if(isInRange(pemain.getPosisiX()+1,pemain.getPosisiY())){
+				if(isLand(pemain.getPosisiX()+1,pemain.getPosisiY())){
+					if(peta[pemain.getPosisiX()+1][pemain.getPosisiY()]->getIsObjectExist()){
+						found = false;
+						i = 0;
+						FarmAnimal* AnimalTemp;
+						while(!found and i <ListFarmAnimal.size){
+							AnimalTemp = (ListFarmAnimal.get(i));
+							xtemp = AnimalTemp->getX();
+							ytemp = AnimalTemp->getY();
+							if(xtemp==pemain.getPosisiX()+1 and ytemp==pemain.getPosisiY()){
+								if(MeatProducingFarmAnimal* v = dynamic_cast<MeatProducingFarmAnimal*>(AnimalTemp)){
+									FarmProduct* temp = AnimalTemp->respondKill();
+									pemain.addElTas(temp);
+								}
+								found = true;
+							}
+							i++;
+						}
+					}
+				}
+			}
 		} else if(input == "kill right"){
-
+			if(isInRange(pemain.getPosisiX(),pemain.getPosisiY()+1)){
+				if(isLand(pemain.getPosisiX(),pemain.getPosisiY()+1)){
+					if(peta[pemain.getPosisiX()][pemain.getPosisiY()+1]->getIsObjectExist()){
+						found = false;
+						i = 0;
+						FarmAnimal* AnimalTemp;
+						while(!found and i <ListFarmAnimal.size){
+							AnimalTemp = (ListFarmAnimal.get(i));
+							xtemp = AnimalTemp->getX();
+							ytemp = AnimalTemp->getY();
+							if(xtemp==pemain.getPosisiX() and ytemp==pemain.getPosisiY()+1){
+								if(MeatProducingFarmAnimal* v = dynamic_cast<MeatProducingFarmAnimal*>(AnimalTemp)){
+									FarmProduct* temp = AnimalTemp->respondKill();
+									pemain.addElTas(temp);
+								}
+								found = true;
+							}
+							i++;
+						}
+					}
+				}
+			}
 		} else if(input == "grow"){
-			
-
-		} else if(input == "well up"){
-
-		} else if(input == "well left"){
-
-		} else if(input == "well down"){
-
-		} else if(input == "well right"){
-
-		} else if(input == "sell up"){
-
-		} else if(input == "sell left"){
-
-		} else if(input == "sell down"){
-
-		} else if(input == "sell right"){
-
-		} else if(input == "mix up"){
-
-		} else if(input == "mix left"){
-
-		} else if(input == "mix down"){
-
-		} else if(input == "mix right"){
 
 		} else if(input == "tutorial"){
-
+			tutorial();
 		} else if(input == "keterangan"){
-
+			keterangan();
 		} else if(input == "listCommand"){
-
-		} else if(input == "exit"){
-
+			listCommand();
 		} else{
 			cout<<"input error"<<endl;
 		}
@@ -317,6 +374,9 @@ void Game::nextTick(){
 					AnimalTemp->move(xtemp,ytemp);
 				}
 			}
+		}
+		if(AnimalTemp->getLapar()<=-5){
+			ListFarmAnimal.remove(AnimalTemp);
 		}
 	}
 }
