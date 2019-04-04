@@ -90,7 +90,7 @@ void Player::kill(MeatProducingFarmAnimal* hewan){
     this->addElTas(hewan->respondKill()); //keknya udah bener
 }
 
-void Player::grow(Land* L){
+void Player::grow(Cell* L){
     L->setIsGrassExist(true);
 }
 
