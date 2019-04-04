@@ -3,6 +3,8 @@ using namespace std;
 #include <cstdlib>
 #include <ctime>
 
+FarmAnimal::FarmAnimal(){}
+
 FarmAnimal::FarmAnimal(int x,int y,int lapar_max){
 	hasilProduct = false;
 	this-> x = x;
