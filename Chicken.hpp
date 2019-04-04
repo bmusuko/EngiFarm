@@ -15,6 +15,6 @@ class Chicken : public EggProducingFarmAnimal, public MeatProducingFarmAnimal {
         FarmProduct* respondInteract(); // call tambah ChickenEgg
         FarmProduct* respondKill(); //ChickenAlive-1
         string getTipeFarmAnimal();
-        static int getChickenAlive(); //return ChickenAlive
+        int getChickenAlive(); //return ChickenAlive
 };
 #endif

@@ -7,7 +7,6 @@ using namespace std;
 int Cow::CowAlive = 0;
 
 Cow::Cow(int x,int y):FarmAnimal(x,y,17) {
-    lapar_max = 17;
     CowAlive++;
 }
 Cow::~Cow() {
@@ -22,7 +21,7 @@ FarmProduct* Cow::respondInteract() {
     return &G;
 }
 FarmProduct* Cow::respondKill() {
-    ~Cow();
+    delete this;
     CowMeat C;
     return &C;
 }

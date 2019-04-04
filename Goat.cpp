@@ -7,7 +7,6 @@ using namespace std;
 int Goat::GoatAlive = 0;
 
 Goat::Goat(int x,int y):FarmAnimal(x,y,14) {
-    lapar_max = 14;
     GoatAlive++;
 }
 Goat::~Goat() {
@@ -22,7 +21,7 @@ FarmProduct* Goat::respondInteract() {
     return &G;
 }
 FarmProduct* Goat::respondKill() {
-    ~Goat();
+    delete this;
     GoatMeat C;
     return &C;
 }

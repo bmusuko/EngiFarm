@@ -5,7 +5,6 @@ using namespace std;
 
 int Sheep::SheepAlive = 0;
 Sheep::Sheep(int x,int y):FarmAnimal(x,y,12){
-	lapar_max = 12;
 	SheepAlive++;
 }
 Sheep::~Sheep(){
@@ -15,7 +14,7 @@ void Sheep::suara(){
 	cout<<"pukpuk"<<endl;
 } //cout "pukpuk"
 FarmProduct* Sheep::respondKill(){
-	~Sheep();
+	delete this;
 	SheepMeat B;
 	return &B;
 } //SheepAlive-1

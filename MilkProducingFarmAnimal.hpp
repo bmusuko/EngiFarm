@@ -5,9 +5,10 @@
 using namespace std;
 
 
-class MilkProducingFarmAnimal: public FarmAnimal{
+class MilkProducingFarmAnimal: virtual public FarmAnimal{
     public:
         //buat interact hewan dan buat objek milk
+        MilkProducingFarmAnimal();
         virtual FarmProduct* respondInteract() = 0;
 };
 
