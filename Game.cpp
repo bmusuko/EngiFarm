@@ -90,10 +90,26 @@ void Game::play(){
 	tutorial();
 	cout<<"Masukkan inputan permainan :";
 	cin>>input;
+	boolean found;
+	int xtemp,ytemp,i;
 	while(input != "exit"){
 		if(input == "talk up"){
 			if(isInRange(P.getPosisiX()-1,P.getPosisiY())){
-				if(peta[i][j]->)
+				if(isLand(x,y)){
+					if(peta[x][y]->getIsObjectExist()){
+						found = false;
+						i = 0;
+						while(!found and i <ListFarmAnimal.size){
+							AnimalTemp = &(ListFarmAnimal.get(i));
+							xtemp = AnimalTemp->getX();
+							ytemp = AnimalTemp->getY();
+							if(xtemp==P.getPosisiX()-1 and ytemp==P.getPosisiY()){
+								AnimalTemp->suara();
+								found = true;
+							}
+						}
+					}
+				}
 			}
 		} else if(input == "talk left"){
 
@@ -287,4 +303,8 @@ void Game::listCommand(){
 
 void Game::isInRange(int x,int y){
 	return ( (x>=0) && (x<n) &&  (y>=0) && (y<m) );
+}
+
+void Game::isLand(int x,int y){
+	return (typeid(Grassland)==typeid(&peta[x][y]) || typeid(Barn)==typeid(&peta[x][y]) || typeid(Coop)==typeid(&peta[x][y]) );
 }
