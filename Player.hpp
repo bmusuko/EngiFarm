@@ -48,11 +48,9 @@ class Player{
         void setY(int y);
 
         //Method Lainnya
-        void talk(FarmAnimal* hewan);
         void interact(MilkProducingFarmAnimal* hewan);
         void interact(EggProducingFarmAnimal* hewan);
         void interact(Facility* facility, string masukan);
-        void kill(MeatProducingFarmAnimal* hewan);
         void grow(Land* L);
         void move(int arah);
         //Method move buat gerak, arah 1 = atas, 2= kanan, 3 = bawah, 4 = kiri

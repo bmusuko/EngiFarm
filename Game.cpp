@@ -5,8 +5,6 @@
 #include<fstream>
 using namespace std;
 
-
-
 Game::Game(){
     ifstream petaInput;  
     petaInput.open("peta.txt");
@@ -411,6 +409,11 @@ void Game::printPeta(){
 	}
 	for(int i=0;i<n;i++){
 		for(int j=0;j<m;j++){
+			petaTemp[i][j] = '/';
+		}
+	}
+	for(int i=0;i<n;i++){
+		for(int j=0;j<m;j++){
 			if(typeid(Grassland)==typeid(&peta[i][j])) {
    				if(peta[i][j]->getIsGrassExist()){
    					petaTemp[i][j] = '#';
@@ -459,6 +462,12 @@ void Game::printPeta(){
 		}
 	}
 	petaTemp[pemain.getPosisiX()][pemain.getPosisiY()] = 'P';
+	for(int i=0;i<n;i++){
+		for(int j=0;j<m;j++){
+			cout<<petaTemp[i][j]<<" ";
+		}
+		cout<<endl;
+	}
 }
 		
 void Game::nextTick(){
