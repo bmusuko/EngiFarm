@@ -80,7 +80,6 @@ Game::Game(){
 			pemain.setX(x);
 			pemain.setY(y);
 		}
-		
 	}
 }
 
@@ -95,9 +94,9 @@ void Game::play(){
 	int xtemp,ytemp,i;
 	while(input != "exit"){
 		if(input == "talk up"){
-			if(isInRange(P.getPosisiX()-1,P.getPosisiY())){
-				if(isLand(P.getPosisiX()-1,P.getPosisiY())){
-					if(peta[P.getPosisiX()-1][P.getPosisiY()]->getIsObjectExist()){
+			if(isInRange(pemain.getPosisiX()-1,pemain.getPosisiY())){
+				if(isLand(pemain.getPosisiX()-1,pemain.getPosisiY())){
+					if(peta[pemain.getPosisiX()-1][pemain.getPosisiY()]->getIsObjectExist()){
 						found = false;
 						i = 0;
 						FarmAnimal* AnimalTemp;
@@ -105,7 +104,7 @@ void Game::play(){
 							AnimalTemp = &(ListFarmAnimal.get(i));
 							xtemp = AnimalTemp->getX();
 							ytemp = AnimalTemp->getY();
-							if(xtemp==P.getPosisiX()-1 and ytemp==P.getPosisiY()){
+							if(xtemp==pemain.getPosisiX()-1 and ytemp==pemain.getPosisiY()){
 								AnimalTemp->suara();
 								found = true;
 							}
@@ -137,6 +136,7 @@ void Game::play(){
 		} else if(input == "kill right"){
 
 		} else if(input == "grow"){
+			
 
 		} else if(input == "well up"){
 
@@ -304,10 +304,10 @@ void Game::listCommand(){
 	cout<<"exit"<<endl;
 }
 
-void Game::isInRange(int x,int y){
+int Game::isInRange(int x,int y){
 	return ( (x>=0) && (x<n) &&  (y>=0) && (y<m) );
 }
 
-void Game::isLand(int x,int y){
+int Game::isLand(int x,int y){
 	return (typeid(Grassland)==typeid(&peta[x][y]) || typeid(Barn)==typeid(&peta[x][y]) || typeid(Coop)==typeid(&peta[x][y]) );
 }

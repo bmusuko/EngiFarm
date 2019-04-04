@@ -43,6 +43,6 @@ class Game{
 		void tutorial();
 		void keterangan();
 		void listCommand();
-		void isInRange();
-		void isLand();
+		int isInRange(int x,int y);
+		int isLand(int x,int y);
 };
