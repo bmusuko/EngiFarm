@@ -1,6 +1,5 @@
 using namespace std;
 #include<iostream>
-#include"Matriks.hpp"
 #include"FarmProduct.hpp"
 
 
@@ -28,6 +27,7 @@ class FarmAnimal{
 		void setHasilProduct(bool hasilProduct);
 		int getX() const;
 		int getY() const;
+		bool isLapar() const;
 };
 
 #endif

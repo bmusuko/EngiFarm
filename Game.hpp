@@ -31,7 +31,7 @@ class Game{
 	private :
 		Cell ***peta;
 		int tick;
-		LinkedList ListFarmAnimal;
+		LinkedList<FarmAnimal*> ListFarmAnimal;
 		int n;
 		int m;
 		Player pemain;

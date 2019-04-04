@@ -54,3 +54,7 @@ int FarmAnimal::getX() const{
 int FarmAnimal::getY() const{
 	return this->y;
 }
+
+bool FarmAnimal::isLapar() const{
+	return lapar <= 0;
+}
