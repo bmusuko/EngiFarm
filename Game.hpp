@@ -28,14 +28,14 @@
 
 
 class Game{
-	private :
+	private:
 		Cell ***peta;
 		int tick;
 		LinkedList<FarmAnimal*> ListFarmAnimal;
 		int n;
 		int m;
 		Player pemain;
-	public :
+	public:
 		Game();
 		void play();
 		void nextTick();
