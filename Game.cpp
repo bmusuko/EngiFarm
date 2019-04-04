@@ -146,5 +146,5 @@ Game::printPeta(){
 }
 		
 Game::tick(){
-
+	
 }
