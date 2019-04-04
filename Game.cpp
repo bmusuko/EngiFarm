@@ -1,5 +1,7 @@
 #include"Game.hpp"
 #include<iostream>
+#include<type_traits>
+#include<typeinfo>
 #include<fstream>
 using namespace std;
 
@@ -81,12 +83,12 @@ Game::Game(){
 	}
 }
 
-Game::play(){
+void Game::play(){
 	cout<<"Selamat datang di Engi's Farm"<<endl;
 }
 
 
-Game::printPeta(){
+void Game::printPeta(){
 	char**petaTemp;
 	petaTemp = new char*[n];
 	for(int i=0;i<n;i++){
@@ -94,29 +96,29 @@ Game::printPeta(){
 	}
 	for(int i=0;i<n;i++){
 		for(int j=0;j<m;j++){
-			if(Grassland* v = dynamic_cast<Grassland*>(&Cell[i][j])) {
-   				if(&Cell[i][j].getIsGrassExist()){
+			if(typeid(Grassland)==typeid(&Cell[i][j])) {
+   				if(Cell[i][j]->getIsGrassExist()){
    					petaTemp[i][j] = '#';
    				} else{
    					petaTemp[i][j] = '-';
    				}
-			} else if(Barn* v = dynamic_cast<Barn*>(&Cell[i][j])){
-				if(&Cell[i][j].getIsGrassExist()){
+			} else if(typeid(Barn)==typeid(&Cell[i][j])){
+				if(Cell[i][j]->getIsGrassExist()){
 					petaTemp[i][j] = '@';
 				} else{
 					petaTemp[i][j] = 'x';
 				}
-			} else if(Coop* v = dynamic_cast<Coop*>(&Cell[i][j])){
-				if(&Cell[i][j].getIsGrassExist()){
+			} else if(typeid(Coop)==typeid(&Cell[i][j])){
+				if(Cell[i][j]->getIsGrassExist()){
 					petaTemp[i][j] = '*';
 				} else{
 					petaTemp[i][j] = 'o';
 				}
-			} else if(Truck* v = dynamic_cast<Truck*>(&Cell[i][j])){
+			} else if(typeid(Truck)==typeid(&Cell[i][j])){
 				petaTemp[i][j] = 'T';
-			} else if(Mixer* v = dynamic_cast<Mixer*>(&Cell[i][j])){
+			} else if(typeid(Mixer)==typeid(&Cell[i][j])){
 				petaTemp[i][j] = 'M';
-			} else if(Well* v = dynamic_cast<Well*>(&Cell[i][j])){
+			} else if(typeid(Well)==typeid(&Cell[i][j])){
 				petaTemp[i][j] = 'W';
 			}
 		}
@@ -126,25 +128,57 @@ Game::printPeta(){
 	int xtemp,ytemp;
 	while(P != NULL){
 		AnimalTemp = &(P->x);
-		xtemp = (&AnimalTemp).getX();
-		ytemp = (&AnimalTemp).getY();
-		if(Ayam* v = dynamic_cast<Ayam*>(&AnimalTemp)){
+		xtemp = AnimalTemp->getX();
+		ytemp = AnimalTemp->getY();
+		if(typeid(Ayam)==typeid(&AnimalTemp)){
 			petaTemp[xtemp][ytemp] = 'A';
-		} else if (Duck* v = dynamic_cast<Duck*>(&AnimalTemp)){
+		} else if (typeid(Duck) == (&AnimalTemp)){
 			petaTemp[xtemp][ytemp] = 'D';
-		} else if(Buffalo* v = dynamic_cast<Buffalo*>(&AnimalTemp)){
+		} else if(typeid(Buffalo) == typeid(&AnimalTemp)){
 			petaTemp[xtemp][ytemp] = 'B';
-		} else if(Sheep* v = dynamic_cast<Sheep*>(&AnimalTemp)){
+		} else if(typeid(Sheep) == typeid(&AnimalTemp)){
 			petaTemp[xtemp][ytemp] = 'S';
-		} else if(Cow* v = dynamic_cast<Cow*>(&AnimalTemp)){
+		} else if(typeid(Cow) == typeid(&AnimalTemp)){
 			petaTemp[xtemp][ytemp] = 'C';
-		} else if(Goat* v = dynamic_cast<Goat*>(&AnimalTemp)){
+		} else if(typeid(Goat) == typeid(&AnimalTemp)){
 			petaTemp[xtemp][ytemp] = 'G';
 		}
 	}
 	petaTemp[pemain.getPosisiX()][pemain.getPosisiY()] = 'P';
 }
 		
-Game::tick(){
-	
+void Game::tick(){
+	FarmAnimal* AnimalTemp;
+	Node *P = ListFarmAnimal;
+	int xtemp,ytemp,xtemp2,ytemp2;
+	while(P){
+		xtemp = AnimalTemp->getX();
+		ytemp = AnimalTemp->getY();
+		// xtemp2 = xtemp;
+		// ytemp2 = ytemp;
+		AnimalTemp = &(P->x);
+		AnimalTemp->setLapar((AnimalTemp->getLapar())-1);
+		if(AnimalTemp->isLapar()){
+			if(peta[xtemp][ytemp].getIsGrassExist()){
+				AnimalTemp->eat();
+				peta[xtemp][ytemp].setIsGrassExist(false);
+			}
+		}
+		AnimalTemp->TryMove(xtemp,ytemp);
+		if(!peta[xtemp][ytemp]->getIsObjectExist()){
+			if(Barn* v = dynamic_cast<Barn*>(&peta[xtemp][ytemp])){
+				if(MeatProducingFarmAnimal* v = dynamic_cast<MeatProducingFarmAnimal*>(&FarmAnimal)){
+					AnimalTemp->move(xtemp,ytemp);
+				}		
+			} else if(Grassland* v = dynamic_cast<Grassland*>(&peta[xtemp][ytemp])){
+				if(MilkProducingFarmAnimal* v = dynamic_cast<MilkProducingFarmAnimal*>(&FarmAnimal)){
+					AnimalTemp->move(xtemp,ytemp);
+				}
+			} else if(Coop* v = dynamic_cast<Coop*>(&peta[xtemp][ytemp])){
+				if(EggProducingFarmAnimal* v = dynamic_cast<EggProducingFarmAnimal*>(&FarmAnimal)){
+					AnimalTemp->move(xtemp,ytemp);
+				}
+			}
+		}
+	}
 }
