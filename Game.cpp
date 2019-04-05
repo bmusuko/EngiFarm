@@ -426,7 +426,9 @@ void Game::play(){
 			}
 		} else if(input == "grow"){
 			pemain.grow((Land*)peta[pemain.getPosisiX()-1][pemain.getPosisiY()]);
-		} else if(input == "tutorial"){
+		} else if(input == "status"){
+			pemain.printPlayerStatus();
+		}else if(input == "tutorial"){
 			tutorial();
 		} else if(input == "keterangan"){
 			keterangan();
