@@ -33,9 +33,9 @@ Game::Game(){
 			} else if (temp[j] == 'x'){
 				Barn B(i,j,false,false);
 				peta[i][j] = &B;
-			} else if (temp[j] == '@'){
+			} else if (temp[j] == 'q'){
 				Barn B(i,j,true,false);
-				peta[i][j] == &B;
+				peta[i][j] = &B;
 			} else if (temp[j] == 'T'){
 				Truck T(i,j);
 				peta[i][j] = &T;
@@ -57,22 +57,22 @@ Game::Game(){
 		dllInput>>x;
 		dllInput>>y;
 		if(c == 'A'){
-			Chicken C(x,y);
+			static Chicken C(x,y);
 			ListFarmAnimal.add(&C);
 		} else if (c == 'D'){
-			Duck D(x,y);
+			static Duck D(x,y);
 			ListFarmAnimal.add(&D);
 		} else if (c == 'B'){
-			Buffalo B(x,y);
+			static Buffalo B(x,y);
 			ListFarmAnimal.add(&B);
 		} else if (c == 'S'){
-			Sheep S(x,y);
+			static Sheep S(x,y);
 			ListFarmAnimal.add(&S);
 		} else if (c == 'C'){
-			Cow C(x,y);
+			static Cow C(x,y);
 			ListFarmAnimal.add(&C);
 		} else if (c == 'G'){
-			Goat G(x,y);
+			static Goat G(x,y);
 			ListFarmAnimal.add(&G);
 		} else if (c == 'P'){
 			pemain.setX(x);
@@ -83,10 +83,13 @@ Game::Game(){
 void Game::play(){
 	cout<<"Selamat datang di Engi's Farm"<<endl;
 	printPeta();
-	string input;
+	string input,input2;
 	tutorial();
 	cout<<"Masukkan inputan permainan :";
-	cin>>input;
+	cin>>input>>input2;
+	if(input2!="\0"){
+		input = input+" "+input2;
+	}
 	bool found;
 	int xtemp,ytemp,i;
 	while(input != "exit"){
@@ -421,6 +424,7 @@ void Game::play(){
 		} else{
 			cout<<"input error"<<endl;
 		}
+		printPeta();
 		cin>>input;
 	}
 }
@@ -435,55 +439,72 @@ void Game::printPeta(){
 			petaTemp[i][j] = '/';
 		}
 	}
+	cout<<"Tipe (Cell) : "<<typeid(Cell).name()<<endl;
+	cout<<"Tipe (Cell&) : "<<typeid(Cell&).name()<<endl;
+	cout<<"Tipe (Cell*) : "<<typeid(Cell*).name()<<endl;
+	cout<<"Tipe (Cell**) : "<<typeid(Cell**).name()<<endl;
+	cout<<"Tipe (Cell&&) : "<<typeid(Cell&&).name()<<endl;
 	for(int i=0;i<n;i++){
 		for(int j=0;j<m;j++){
-			if(typeid(Grassland)==typeid(&peta[i][j])) {
+			cout<<"Tipe pointer "<<i<<" "<<j<<" : "<<typeid(*peta[i][j]).name()<<endl;
+			if(typeid(Grassland)==typeid(*peta[i][j])){
    				if(peta[i][j]->getIsGrassExist()){
    					petaTemp[i][j] = '#';
    				} else{
    					petaTemp[i][j] = '-';
    				}
-			} else if(typeid(Barn)==typeid(&peta[i][j])){
+			} else if(typeid(Barn)==typeid(*peta[i][j])){
 				if(peta[i][j]->getIsGrassExist()){
-					petaTemp[i][j] = '@';
+					petaTemp[i][j] = 'q';
 				} else{
 					petaTemp[i][j] = 'x';
 				}
-			} else if(typeid(Coop)==typeid(&peta[i][j])){
+			} else if(typeid(Coop)==typeid(*peta[i][j])){
 				if(peta[i][j]->getIsGrassExist()){
 					petaTemp[i][j] = '*';
 				} else{
 					petaTemp[i][j] = 'o';
 				}
-			} else if(typeid(Truck)==typeid(&peta[i][j])){
+			} else if(typeid(Truck)==typeid(*peta[i][j])){
 				petaTemp[i][j] = 'T';
-			} else if(typeid(Mixer)==typeid(&peta[i][j])){
+			} else if(typeid(Mixer)==typeid(*peta[i][j])){
 				petaTemp[i][j] = 'M';
-			} else if(typeid(Well)==typeid(&peta[i][j])){
+			} else if(typeid(Well)==typeid(*peta[i][j])){
 				petaTemp[i][j] = 'W';
 			}
 		}
 	}
+	cout<<"Sampe"<<endl;
 	FarmAnimal* AnimalTemp;
 	int xtemp,ytemp;
+	cout<<"i = "<<ListFarmAnimal.size<<endl;
 	for(int i=0;i<ListFarmAnimal.size;i++){
+		
 		AnimalTemp = (ListFarmAnimal.get(i));
 		xtemp = AnimalTemp->getX();
 		ytemp = AnimalTemp->getY();
-		if(typeid(Chicken)==typeid(&AnimalTemp)){
+
+		cout<<"i = "<<i<<" "<<typeid(AnimalTemp).name()<<"x = "<<xtemp<<" y = "<<ytemp<<endl;
+		cout<<"i = "<<i<<" "<<typeid(&AnimalTemp).name()<<"x = "<<xtemp<<" y = "<<ytemp<<endl;
+		cout<<"i = "<<i<<" "<<typeid(*AnimalTemp).name()<<"x = "<<xtemp<<" y = "<<ytemp<<endl;
+		cout<<"i = "<<typeid(Chicken).name()<<endl;
+		
+		if(typeid(Chicken)==typeid(*AnimalTemp)){
 			petaTemp[xtemp][ytemp] = 'A';
-		} else if (typeid(Duck) == typeid(&AnimalTemp)){
+		} else if (typeid(Duck) == typeid(*AnimalTemp)){
 			petaTemp[xtemp][ytemp] = 'D';
-		} else if(typeid(Buffalo) == typeid(&AnimalTemp)){
+		} else if(typeid(Buffalo) == typeid(*AnimalTemp)){
 			petaTemp[xtemp][ytemp] = 'B';
-		} else if(typeid(Sheep) == typeid(&AnimalTemp)){
+		} else if(typeid(Sheep) == typeid(*AnimalTemp)){
 			petaTemp[xtemp][ytemp] = 'S';
-		} else if(typeid(Cow) == typeid(&AnimalTemp)){
+		} else if(typeid(Cow) == typeid(*AnimalTemp)){
 			petaTemp[xtemp][ytemp] = 'C';
-		} else if(typeid(Goat) == typeid(&AnimalTemp)){
+		} else if(typeid(Goat) == typeid(*AnimalTemp)){
 			petaTemp[xtemp][ytemp] = 'G';
 		}
+		cout<<"Samp "<<i<<endl;
 	}
+	cout<<"Sampe 2"<<endl;
 	petaTemp[pemain.getPosisiX()][pemain.getPosisiY()] = 'P';
 	for(int i=0;i<n;i++){
 		for(int j=0;j<m;j++){
