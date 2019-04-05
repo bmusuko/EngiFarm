@@ -12,7 +12,7 @@ class Truck : public Facility{
 
         void minCD();
 
-        void use(LinkedList<Product*> LP,int &money, int &water, string masukan);
+        void use(LinkedList<Product*>& LP,int &money, int &water, string masukan);
 };
 
 #endif

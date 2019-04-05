@@ -10,7 +10,7 @@ void Truck::minCD(){
     }
 }
 
-void Truck::use(LinkedList<Product*> LP,int &money, int &water, string masukan){
+void Truck::use(LinkedList<Product*> &LP,int &money, int &water, string masukan){
     if (cooldown == 0){
         while(!(LP.isEmpty())){
             Product * Pd;

@@ -12,6 +12,9 @@
 #include "MeatProducingFarmAnimal.hpp"
 #include "MilkProducingFarmAnimal.hpp"
 #include "EggProducingFarmAnimal.hpp"
+#include "Well.hpp"
+#include "Truck.hpp"
+#include "Mixer.hpp"
 
 class Player{
     private:

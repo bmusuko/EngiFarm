@@ -10,7 +10,8 @@ class Well : public Facility{
         //Konstuktor
         Well(int X, int Y);
 
-        void use(LinkedList<Product*> LP,int &money, int &water, string masukan);
+        void use(LinkedList<Product*> &LP,int &money, int &water, string masukan);
+        void use(int& waiter);
 };
 
 #endif

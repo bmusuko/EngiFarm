@@ -5,7 +5,7 @@ using namespace std;
 
 Mixer::Mixer(int X, int Y) : Facility(X,Y) {}
 
-void Mixer::use(LinkedList<Product*> LP,int &money, int &water, string masukan) {
+void Mixer::use(LinkedList<Product*> &LP,int &money, int &water, string masukan) {
     int choose;
     bool isInventAvail;
 

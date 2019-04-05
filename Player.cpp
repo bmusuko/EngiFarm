@@ -79,7 +79,11 @@ void Player::interact(EggProducingFarmAnimal* hewan){
     this->addElTas(hewan->respondInteract()); //keknya udah bener
 }
 void Player::interact(Facility* facility, string masukan){
-    facility->use(this->tas,this->money,this->wadahAir,masukan);    //keknya udah bener
+    cout<<"Masuk interract facility"<<endl;
+    // cout<<typeid(*facility).name()<<endl;
+    // cout<<typeid(Well).name()<<endl;
+    // if (typeid(facility) == typeid(Well)){}
+    facility->use(tas, money, wadahAir, masukan);    //keknya udah bener
 }
 
 void Player::grow(Land* L){
