@@ -59,21 +59,28 @@ Game::Game(){
 		if(c == 'A'){
 			// Chicken C(x,y);
 			ListFarmAnimal.add(new Chicken(x,y));
+			peta[x][y]->setIsObjectExist(true);
 		} else if (c == 'D'){
 			// Duck D(x,y);
 			ListFarmAnimal.add(new Duck(x,y));
+			peta[x][y]->setIsObjectExist(true);
 		} else if (c == 'B'){
 			// Buffalo B(x,y);
 			ListFarmAnimal.add(new Buffalo(x,y));
+			peta[x][y]->setIsObjectExist(true);
 		} else if (c == 'S'){
 			// Sheep S(x,y);
 			ListFarmAnimal.add(new Sheep(x,y));
+			peta[x][y]->setIsObjectExist(true);
 		} else if (c == 'C'){
 			ListFarmAnimal.add(new Cow(x,y));
+			peta[x][y]->setIsObjectExist(true);
 		} else if (c == 'G'){
 			// Goat G(x,y);
 			ListFarmAnimal.add(new Goat(x,y));
+			peta[x][y]->setIsObjectExist(true);
 		} else if (c == 'P'){
+			peta[x][y]->setIsObjectExist(false);
 			pemain.setX(x);
 			pemain.setY(y);
 		}
@@ -92,25 +99,33 @@ void Game::play(){
 		if (input == "move up"){
 			if(isInRange(pemain.getPosisiX()-1,pemain.getPosisiY())){
 				if(isLand(pemain.getPosisiX()-1,pemain.getPosisiY())){
-					pemain.move(1);
+					if(!peta[pemain.getPosisiX()-1][pemain.getPosisiY()]->getIsObjectExist()){
+						pemain.move(1);
+					}
 				}
 			}
 		}else if(input == "move left"){
 			if(isInRange(pemain.getPosisiX(),pemain.getPosisiY()-1)){
 				if(isLand(pemain.getPosisiX(),pemain.getPosisiY()-1)){
-					pemain.move(4);
+					if(!peta[pemain.getPosisiX()-1][pemain.getPosisiY()]->getIsObjectExist()){
+						pemain.move(4);
+					}
 				}
 			}
 		}else if(input == "move down"){
 			if(isInRange(pemain.getPosisiX()+1,pemain.getPosisiY())){
 				if(isLand(pemain.getPosisiX()+1,pemain.getPosisiY())){
-					pemain.move(3);
+					if(!peta[pemain.getPosisiX()+1][pemain.getPosisiY()]->getIsObjectExist()){
+						pemain.move(3);
+					}				
 				}
 			}
 		}else if(input == "move right"){
 			if(isInRange(pemain.getPosisiX(),pemain.getPosisiY()+1)){
 				if(isLand(pemain.getPosisiX(),pemain.getPosisiY()+1)){
-					pemain.move(2);
+					if(!peta[pemain.getPosisiX()][pemain.getPosisiY()+1]->getIsObjectExist()){
+						pemain.move(2);
+					}
 				}
 			}
 		}else if(input == "talk up"){
@@ -420,6 +435,7 @@ void Game::play(){
 		} else{
 			cout<<"input error"<<endl;
 		}
+		// nextTick();
 		printPeta();
 		cout<<"Masukkan inputan permainan :"<<endl;;
 		getline(cin,input);
@@ -526,18 +542,24 @@ void Game::nextTick(){
 			}
 		}
 		AnimalTemp->TryMove(xtemp,ytemp);
-		if(!peta[xtemp][ytemp]->getIsObjectExist()){
-			if(typeid(Barn)==typeid(&peta[xtemp][ytemp])){
-				if(MeatProducingFarmAnimal* v = dynamic_cast<MeatProducingFarmAnimal*>(AnimalTemp)){
-					AnimalTemp->move(xtemp,ytemp);
-				}		
-			} else if(typeid(Grassland)==typeid(&peta[xtemp][ytemp])){
-				if(MilkProducingFarmAnimal* v = dynamic_cast<MilkProducingFarmAnimal*>(AnimalTemp)){
-					AnimalTemp->move(xtemp,ytemp);
-				}
-			} else if(typeid(Coop)==typeid(&peta[xtemp][ytemp])){
-				if(EggProducingFarmAnimal* v = dynamic_cast<EggProducingFarmAnimal*>(AnimalTemp)){
-					AnimalTemp->move(xtemp,ytemp);
+		if (isInRange(xtemp,ytemp)){
+				if(!peta[xtemp][ytemp]->getIsObjectExist()){
+				cout<<"masuk object"<<endl;
+				if(typeid(Barn)==typeid(*peta[xtemp][ytemp])){
+					if(MeatProducingFarmAnimal* v = dynamic_cast<MeatProducingFarmAnimal*>(AnimalTemp)){
+						cout<<"masuk meat"<<endl;
+						AnimalTemp->move(xtemp,ytemp);
+					}		
+				} else if(typeid(Grassland)==typeid(*peta[xtemp][ytemp])){
+					if(MilkProducingFarmAnimal* v = dynamic_cast<MilkProducingFarmAnimal*>(AnimalTemp)){
+											cout<<"masuk milk"<<endl;
+						AnimalTemp->move(xtemp,ytemp);
+					}
+				} else if(typeid(Coop)==typeid(*peta[xtemp][ytemp])){
+					if(EggProducingFarmAnimal* v = dynamic_cast<EggProducingFarmAnimal*>(AnimalTemp)){
+											cout<<"masuk egg"<<endl;
+						AnimalTemp->move(xtemp,ytemp);
+					}
 				}
 			}
 		}
