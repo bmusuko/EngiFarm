@@ -12,6 +12,7 @@ void Mixer::use(LinkedList<Product*> &LP,int &money, int &water, string masukan)
     cout<<"Bahan yang ingin dibuat : 1. Martabak"<<endl; 
     cout<<"                          2. Cheese"<<endl;
     cout<<"                          3. Beef Rolade"<<endl;
+    cout<<"Masukan pilihan anda : ";
     cin>>choose;
     
     ChickenEgg CE;
@@ -41,41 +42,38 @@ void Mixer::use(LinkedList<Product*> &LP,int &money, int &water, string masukan)
     }
 }
 
-void Mixer::isInventAvailable(LinkedList<Product*> LP,bool *isAvail, Product* P1, Product* P2) {
+void Mixer::isInventAvailable(LinkedList<Product*> &LP,bool *isAvail, Product* P1, Product* P2) {
     bool foundP1 = false, foundP2 = false;
-    *isAvail = false;
-    for (int i=0;i<LP.size;i++) {
-        if (!foundP1) {
-            if (typeid(LP.get(i)) == typeid(*P1)) {
-                foundP1 = true; continue;
+    int idx1, idx2;
+    for (int i = 0;i<LP.size;i++){
+        if (!foundP1){
+            if ((LP.get(i)->getCode()) == P1->getCode()){
+                foundP1 = true;
+                idx1 = i;
             }
         }
-        if (!foundP2) {
-            if (typeid(LP.get(i)) == typeid(*P2)) {
+        if (!foundP2){
+            if ((LP.get(i)->getCode()) == P2->getCode()){
                 foundP2 = true;
+                idx2 = i;
             }
-        }
-        if (foundP1 && foundP2) {
-            *isAvail = true; break;
         }
     }
+    *isAvail = foundP1&&foundP2;
     if (*isAvail) {
-        LP.remove(P1);
-        LP.remove(P2);
+        LP.remove(LP.get(idx1));
+        LP.remove(LP.get(idx2));
     }
 }
 
-void Mixer::createMartabak(LinkedList<Product*> LP){
-    Martabak M;
-    LP.add(&M);
+void Mixer::createMartabak(LinkedList<Product*>& LP){
+    LP.add(new Martabak);
 }
         
-void Mixer::createCheese(LinkedList<Product*> LP){
-    Cheese C;
-    LP.add(&C);
+void Mixer::createCheese(LinkedList<Product*>& LP){
+    LP.add(new Cheese);
 }
         
-void Mixer::createBeefRolade(LinkedList<Product*> LP){
-    BeefRolade BR;
-    LP.add(&BR);
+void Mixer::createBeefRolade(LinkedList<Product*>& LP){
+    LP.add(new BeefRolade);
 }

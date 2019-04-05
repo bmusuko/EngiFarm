@@ -1,8 +1,8 @@
 10 11
-ooo-xxxx--T
-o**-xxxx--M
-o*o-xx@@---
-----xxx@--W
+****xxxx--T
+****xxxx--M
+****xx@@---
+****xxx@--W
 ----xxxx---
 ----xxxx---
 -----------

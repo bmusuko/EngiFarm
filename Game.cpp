@@ -453,7 +453,7 @@ void Game::play(){
 				}
 			}
 		} else if(input == "grow"){
-			pemain.grow((Land*)peta[pemain.getPosisiX()-1][pemain.getPosisiY()]);
+			pemain.grow((Land*)peta[pemain.getPosisiX()][pemain.getPosisiY()]);
 		} else if(input == "tutorial"){
 			tutorial();
 		} else if(input == "keterangan"){
@@ -574,7 +574,7 @@ void Game::nextTick(){
 		AnimalTemp->TryMove(xtemp,ytemp);
 		if (isInRange(xtemp,ytemp)){
 				if(!peta[xtemp][ytemp]->getIsObjectExist()){
-				cout<<"masuk object"<<endl;
+				// cout<<"masuk object"<<endl;
 				if(typeid(Barn)==typeid(*peta[xtemp][ytemp])){
 					if(MeatProducingFarmAnimal* v = dynamic_cast<MeatProducingFarmAnimal*>(AnimalTemp)){
 						// cout<<"masuk meat"<<endl;

@@ -18,17 +18,13 @@ class Mixer : public Facility{
         Mixer(int X, int Y);
         void use(LinkedList<Product*> &LP,int &money, int &water, string masukan);
 
-        void isInventAvailable(LinkedList<Product*> LP,bool *isAvail, Product* P1, Product* P2);        
-/*  
-        void isInventAvailable(LinkedList<Product*> LP,bool *isAvail, ChickenEgg P1, DuckEgg P2);
-        void isInventAvailable(LinkedList<Product*> LP,bool *isAvail, CowMilk P1, GoatMilk P2);
-        void isInventAvailable(LinkedList<Product*> LP,bool *isAvail, CowMeat P1, ChickenEgg P2);
-  */  
-        void createMartabak(LinkedList<Product*> LP);
+        void isInventAvailable(LinkedList<Product*>& LP,bool *isAvail, Product* P1, Product* P2);        
+
+        void createMartabak(LinkedList<Product*>& LP);
         
-        void createCheese(LinkedList<Product*> LP);
+        void createCheese(LinkedList<Product*>& LP);
         
-        void createBeefRolade(LinkedList<Product*> LP);
+        void createBeefRolade(LinkedList<Product*>& LP);
 };
 
 #endif
