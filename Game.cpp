@@ -19,32 +19,32 @@ Game::Game(){
 		petaInput>>temp;
 		for(int j=0;j<m;j++){
 			if(temp[j] == 'o'){
-				Coop C(i,j,false,false);
-				peta[i][j] = &C;
+				// Coop C(i,j,false,false);
+				peta[i][j] = new Coop(i,j,false,false);
 			} else if(temp[j] == '*'){
-				Coop C(i,j,true,false);
-				peta[i][j] = &C;
+				// Coop C(i,j,true,false);
+				peta[i][j] = new Coop(i,j,true,false);
 			} else if(temp[j] == '-'){
-				Grassland G(i,j,false,false);
-				peta[i][j] = &G;
+				// Grassland G(i,j,false,false);
+				peta[i][j] = new Grassland(i,j,false,false);
 			} else if (temp[j] == '#'){
-				Grassland G(i,j,true,false);
-				peta[i][j] = &G;
+				// Grassland G(i,j,true,false);
+				peta[i][j] = new Grassland(i,j,true,false);
 			} else if (temp[j] == 'x'){
-				Barn B(i,j,false,false);
-				peta[i][j] = &B;
-			} else if (temp[j] == 'q'){
-				Barn B(i,j,true,false);
-				peta[i][j] = &B;
+				// Barn B(i,j,false,false);
+				peta[i][j] = new Barn(i,j,false,false);
+			} else if (temp[j] == '@'){
+				// Barn B(i,j,true,false);
+				peta[i][j] = new Barn(i,j,true,false);
 			} else if (temp[j] == 'T'){
-				Truck T(i,j);
-				peta[i][j] = &T;
+				// Truck T(i,j);
+				peta[i][j] = new Truck(i,j);
 			} else if (temp[j] == 'M'){
-				Mixer M(i,j);
-				peta[i][j] = &M;
+				// Mixer M(i,j);
+				peta[i][j] = new Mixer(i,j);
 			} else if (temp[j] == 'W'){
-				Well W(i,j);
-				peta[i][j] = &W;
+				// Well W(i,j);
+				peta[i][j] = new Well(i,j);
 			}
 		}
 	}
@@ -57,23 +57,22 @@ Game::Game(){
 		dllInput>>x;
 		dllInput>>y;
 		if(c == 'A'){
-			static Chicken C(x,y);
-			ListFarmAnimal.add(&C);
+			// Chicken C(x,y);
+			ListFarmAnimal.add(new Chicken(x,y));
 		} else if (c == 'D'){
-			static Duck D(x,y);
-			ListFarmAnimal.add(&D);
+			// Duck D(x,y);
+			ListFarmAnimal.add(new Duck(x,y));
 		} else if (c == 'B'){
-			static Buffalo B(x,y);
-			ListFarmAnimal.add(&B);
+			// Buffalo B(x,y);
+			ListFarmAnimal.add(new Buffalo(x,y));
 		} else if (c == 'S'){
-			static Sheep S(x,y);
-			ListFarmAnimal.add(&S);
+			// Sheep S(x,y);
+			ListFarmAnimal.add(new Sheep(x,y));
 		} else if (c == 'C'){
-			static Cow C(x,y);
-			ListFarmAnimal.add(&C);
+			ListFarmAnimal.add(new Cow(x,y));
 		} else if (c == 'G'){
-			static Goat G(x,y);
-			ListFarmAnimal.add(&G);
+			// Goat G(x,y);
+			ListFarmAnimal.add(new Goat(x,y));
 		} else if (c == 'P'){
 			pemain.setX(x);
 			pemain.setY(y);
@@ -455,7 +454,7 @@ void Game::printPeta(){
    				}
 			} else if(typeid(Barn)==typeid(*peta[i][j])){
 				if(peta[i][j]->getIsGrassExist()){
-					petaTemp[i][j] = 'q';
+					petaTemp[i][j] = '@';
 				} else{
 					petaTemp[i][j] = 'x';
 				}
