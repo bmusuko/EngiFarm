@@ -1,2 +1,2 @@
 # EngiFarm
-IF2210 - Pemrograman Berorientasi Objek - Tugas Besar Milestone 1
+IF2210 - Pemrograman Berorientasi Objek - Tugas Besar 1
