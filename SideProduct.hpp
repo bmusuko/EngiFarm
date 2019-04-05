@@ -10,7 +10,7 @@ class SideProduct : public Product {
     
     public:
         // ctor
-        SideProduct();
+        SideProduct(int harga,string code);
         // ctor parameter
         SideProduct(FarmProduct *arrFarm, int size);
 

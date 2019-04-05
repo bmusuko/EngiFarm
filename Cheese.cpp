@@ -5,6 +5,6 @@
 
 using namespace std;
 
-Cheese::Cheese() : SideProduct() {
+Cheese::Cheese() : SideProduct(20000,"Cheese") {
     harga = 20000;
 }

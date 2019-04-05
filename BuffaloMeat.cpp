@@ -4,6 +4,5 @@
 #include "FarmProduct.hpp"
 using namespace std;
 
-BuffaloMeat::BuffaloMeat() : FarmProduct(){
-    harga = 70000;
+BuffaloMeat::BuffaloMeat() : FarmProduct(70000,"BuffaloMeat"){
 }

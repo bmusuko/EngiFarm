@@ -7,8 +7,7 @@ class Cheese : public SideProduct {
     public:
         //ctor
         Cheese();
-
-};
+};	
 
 
 

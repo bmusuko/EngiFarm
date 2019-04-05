@@ -5,7 +5,8 @@
 class FarmProduct : public Product {
     public:
     //     //ctor
-        FarmProduct();
+    	FarmProduct();
+        FarmProduct(int harga,string code);
 };
 
 

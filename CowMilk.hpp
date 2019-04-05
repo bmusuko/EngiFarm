@@ -7,7 +7,6 @@ class CowMilk : public FarmProduct {
         //ctor
         CowMilk();
 
-
 };
 
 

@@ -9,7 +9,6 @@ class GoatMilk : public FarmProduct{
 
 
 
-
 };
 
 

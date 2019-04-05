@@ -3,12 +3,12 @@
 #include "SideProduct.hpp"
 using namespace std;
 
-SideProduct::SideProduct() : Product(harga){
+SideProduct::SideProduct(int harga,string code) : Product(harga,code){
     this->size = 0;
     this->dataFarm = new FarmProduct[size];
 }
 
-SideProduct::SideProduct(FarmProduct *arrFarm, int size) : Product(harga){
+SideProduct::SideProduct(FarmProduct *arrFarm, int size) : Product(harga,code){
     this->size = size;
     this->dataFarm = new FarmProduct[size];
 

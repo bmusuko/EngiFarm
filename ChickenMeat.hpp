@@ -6,7 +6,6 @@ class ChickenMeat : public FarmProduct{
     public:
         //ctor
         ChickenMeat();
-
 };
 
 #endif

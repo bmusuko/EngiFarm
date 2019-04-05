@@ -5,6 +5,5 @@
 
 using namespace std;
 
-BeefRolade::BeefRolade() : SideProduct(){
-    harga = 20000;
+BeefRolade::BeefRolade() : SideProduct(20000,"BeefRolade"){
 }

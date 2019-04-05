@@ -3,6 +3,7 @@
 #include <iostream>
 using namespace std;
 
-FarmProduct::FarmProduct():Product(harga){
+FarmProduct::FarmProduct():Product(0,"XXX"){}
+FarmProduct::FarmProduct(int harga,string code):Product(harga,code){
 
 }

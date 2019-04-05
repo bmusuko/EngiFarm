@@ -5,6 +5,5 @@
 
 using namespace std;
 
-CowMeat::CowMeat() : FarmProduct() {
-    harga = 120000;
+CowMeat::CowMeat() : FarmProduct(120000,"CowMeat") {
 }

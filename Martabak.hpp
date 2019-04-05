@@ -7,7 +7,6 @@ class Martabak : public SideProduct{
         //ctor
         Martabak();
 
-
 };
 
 

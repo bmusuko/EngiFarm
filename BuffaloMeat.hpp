@@ -7,7 +7,6 @@ class BuffaloMeat : public FarmProduct {
         //ctor 
         BuffaloMeat();
 
-
 };
 
 
