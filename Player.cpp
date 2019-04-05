@@ -98,5 +98,14 @@ void Player::move(int arah){
     }
 }
 
+void Player::printPlayerStatus(){
+    cout<< "Wadah Air : "<< getWadahAir() <<endl;
+    cout<< "Money : "<<getMoney() <<endl;
+    cout<<"Inventory : "<<endl;
+    for (int i = 0;i<tas.size;i++){
+        cout<<typeid((tas.get(i))).name<<endl;
+    }
+}
+
 
 

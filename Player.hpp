@@ -1,6 +1,8 @@
 #ifndef __PLAYER_HPP__
 #define __PLAYER_HPP__
 
+#include<type_traits>
+#include<typeinfo>
 #include "Product.hpp"
 #include "LinkedList.hpp"
 #include "Cell.hpp"
@@ -10,6 +12,7 @@
 #include "MeatProducingFarmAnimal.hpp"
 #include "MilkProducingFarmAnimal.hpp"
 #include "EggProducingFarmAnimal.hpp"
+
 
 class Player{
     private:
@@ -53,6 +56,7 @@ class Player{
         void interact(Facility* facility, string masukan);
         void grow(Land* L);
         void move(int arah);
+        void printPlayerStatus();
         //Method move buat gerak, arah 1 = atas, 2= kanan, 3 = bawah, 4 = kiri
 };
 
