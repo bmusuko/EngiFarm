@@ -79,16 +79,11 @@ void Player::interact(EggProducingFarmAnimal* hewan){
     this->addElTas(hewan->respondInteract()); //keknya udah bener
 }
 void Player::interact(Facility* facility, string masukan){
-    cout<<"Masuk interract facility"<<endl;
-    // cout<<typeid(*facility).name()<<endl;
-    // cout<<typeid(Well).name()<<endl;
-    // if (typeid(facility) == typeid(Well)){}
-    facility->use(tas, money, wadahAir, masukan);    //keknya udah bener
+    facility->use(this->tas,this->money,this->wadahAir,masukan);    //keknya udah bener
 }
 
 void Player::grow(Land* L){
     L->setIsGrassExist(true);
-    wadahAir--;
 }
 
 void Player::move(int arah){
@@ -110,13 +105,13 @@ void Player::printPlayerStatus(){
     if (tas.size!=0){
         cout<<"Inventory : "<<endl;
         for (int i = 0;i<tas.size;i++){
-        cout<<typeid(*(tas.get(i))).name()<<endl;
+            Product* temp = tas.get(i);
+            cout<<temp->getCode()<<endl;
         }
     }else{
         cout<<"Inventory Kosong"<<endl;
     }
     cout<<endl;
 }
-
 
 
