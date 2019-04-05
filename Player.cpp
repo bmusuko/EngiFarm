@@ -84,6 +84,7 @@ void Player::interact(Facility* facility, string masukan){
 
 void Player::grow(Land* L){
     L->setIsGrassExist(true);
+    wadahAir--;
 }
 
 void Player::move(int arah){
@@ -96,6 +97,21 @@ void Player::move(int arah){
     }else if (arah == 4){
         posisiY--;
     }
+}
+
+void Player::printPlayerStatus(){
+    cout<<endl;
+    cout<< "Wadah Air : "<< getWadahAir() <<endl;
+    cout<< "Money : "<<getMoney() <<endl;
+    if (tas.size!=0){
+        cout<<"Inventory : "<<endl;
+        for (int i = 0;i<tas.size;i++){
+        cout<<typeid(*(tas.get(i))).name()<<endl;
+        }
+    }else{
+        cout<<"Inventory Kosong"<<endl;
+    }
+    cout<<endl;
 }
 
 
