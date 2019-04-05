@@ -1,7 +1,7 @@
 #include "Truck.hpp"
 
 Truck::Truck(int X, int Y):Facility(X,Y){
-    cooldown = 5;
+    cooldown = 0;
 }
 
 void Truck::minCD(){
@@ -10,12 +10,13 @@ void Truck::minCD(){
     }
 }
 
-void Truck::use(LinkedList<Product*> &LP,int &money, int &water, string masukan){
+void Truck::use(LinkedList<Product*>& LP,int &money, int &water, string masukan){
+    cout<<"Masuk"<<endl;
     if (cooldown == 0){
+        cout<<"Masuk 2"<<endl;
         while(!(LP.isEmpty())){
-            Product * Pd;
-            LP.remove(Pd);
-            money+=Pd->getHarga();
+            money = money+ (LP.get(LP.size-1))->getHarga();
+            LP.remove(LP.get(LP.size-1));
         }
     }
 }
