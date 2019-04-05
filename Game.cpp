@@ -238,11 +238,11 @@ void Game::play(){
 							i++;
 						}
                     }
-                }else if (typeid(Well) == typeid(*peta[pemain.getPosisiX()-1][pemain.getPosisiY()])){
+                }else if (typeid(Well) == typeid((Well*)peta[pemain.getPosisiX()-1][pemain.getPosisiY()])){
                     pemain.interact((Facility*)peta[pemain.getPosisiX()-1][pemain.getPosisiY()],"");
-                }else if(typeid(Truck) == typeid(*peta[pemain.getPosisiX()-1][pemain.getPosisiY()])){
+                }else if(typeid(Truck) == typeid((Truck*)peta[pemain.getPosisiX()-1][pemain.getPosisiY()])){
                     pemain.interact((Facility*)peta[pemain.getPosisiX()-1][pemain.getPosisiY()],"");
-                }else if (typeid(Mixer) == typeid(*peta[pemain.getPosisiX()-1][pemain.getPosisiY()])){
+                }else if (typeid(Mixer) == typeid((Mixer*)peta[pemain.getPosisiX()-1][pemain.getPosisiY()])){
                     pemain.interact((Facility*)peta[pemain.getPosisiX()-1][pemain.getPosisiY()],"");
                 }
             }
@@ -269,11 +269,11 @@ void Game::play(){
 							i++;
 						}
                     }
-                }else if (typeid(Well) == typeid(*peta[pemain.getPosisiX()][pemain.getPosisiY()-1])){
+                }else if (typeid(Well) == typeid((Well*)peta[pemain.getPosisiX()][pemain.getPosisiY()-1])){
                     pemain.interact((Facility*)peta[pemain.getPosisiX()][pemain.getPosisiY()-1],"");
-                }else if(typeid(Truck) == typeid(*peta[pemain.getPosisiX()][pemain.getPosisiY()-1])){
+                }else if(typeid(Truck) == typeid((Truck*)peta[pemain.getPosisiX()][pemain.getPosisiY()-1])){
                     pemain.interact((Facility*)peta[pemain.getPosisiX()][pemain.getPosisiY()-1],"");
-                }else if (typeid(Mixer) == typeid(*peta[pemain.getPosisiX()][pemain.getPosisiY()-1])){
+                }else if (typeid(Mixer) == typeid((Mixer*)peta[pemain.getPosisiX()][pemain.getPosisiY()-1])){
                     pemain.interact((Facility*)peta[pemain.getPosisiX()][pemain.getPosisiY()-1],"");
                 }
             }
@@ -300,11 +300,11 @@ void Game::play(){
 							i++;
 						}
                     }
-                }else if (typeid(Well) == typeid(*peta[pemain.getPosisiX()+1][pemain.getPosisiY()])){
+                }else if (typeid(Well) == typeid((Well*)peta[pemain.getPosisiX()+1][pemain.getPosisiY()])){
                     pemain.interact((Facility*)peta[pemain.getPosisiX()+1][pemain.getPosisiY()],"");
-                }else if(typeid(Truck) == typeid(*peta[pemain.getPosisiX()+1][pemain.getPosisiY()])){
+                }else if(typeid(Truck) == typeid((Truck*)peta[pemain.getPosisiX()+1][pemain.getPosisiY()])){
                     pemain.interact((Facility*)peta[pemain.getPosisiX()+1][pemain.getPosisiY()],"");
-                }else if (typeid(Mixer) == typeid(*peta[pemain.getPosisiX()+1][pemain.getPosisiY()])){
+                }else if (typeid(Mixer) == typeid((Mixer*)peta[pemain.getPosisiX()+1][pemain.getPosisiY()])){
                     pemain.interact((Facility*)peta[pemain.getPosisiX()+1][pemain.getPosisiY()],"");
                 }
             }
@@ -331,11 +331,11 @@ void Game::play(){
 							i++;
 						}
                     }
-                }else if (typeid(Well) == typeid(*peta[pemain.getPosisiX()][pemain.getPosisiY()+1])){
+                }else if (typeid(Well) == typeid((Well*)peta[pemain.getPosisiX()][pemain.getPosisiY()+1])){
                     pemain.interact((Facility*)peta[pemain.getPosisiX()][pemain.getPosisiY()+1],"");
-                }else if(typeid(Truck) == typeid(*peta[pemain.getPosisiX()][pemain.getPosisiY()+1])){
+                }else if(typeid(Truck) == typeid((Truck*)peta[pemain.getPosisiX()][pemain.getPosisiY()+1])){
                     pemain.interact((Facility*)peta[pemain.getPosisiX()][pemain.getPosisiY()+1],"");
-                }else if (typeid(Mixer) == typeid(*peta[pemain.getPosisiX()][pemain.getPosisiY()+1])){
+                }else if (typeid(Mixer) == typeid((Mixer*)peta[pemain.getPosisiX()][pemain.getPosisiY()+1])){
                     pemain.interact((Facility*)peta[pemain.getPosisiX()][pemain.getPosisiY()+1],"");
                 }
             }
@@ -356,6 +356,7 @@ void Game::play(){
 									FarmProduct* temp = v->respondKill();
 									ListFarmAnimal.remove(AnimalTemp);
 									pemain.addElTas(temp);
+									cout<<temp->getCode()<<" "<<temp->getHarga()<<endl;
 								}
 								found = true;
 							}
@@ -380,6 +381,7 @@ void Game::play(){
 									FarmProduct* temp = v->respondKill();
 									ListFarmAnimal.remove(AnimalTemp);
 									pemain.addElTas(temp);
+									cout<<temp->getCode()<<" "<<temp->getHarga()<<endl;
 								}
 								found = true;
 							}
@@ -404,6 +406,7 @@ void Game::play(){
 									FarmProduct* temp = v->respondKill();
 									ListFarmAnimal.remove(AnimalTemp);
 									pemain.addElTas(temp);
+									cout<<temp->getCode()<<" "<<temp->getHarga()<<endl;
 								}
 								found = true;
 							}
@@ -428,6 +431,7 @@ void Game::play(){
 									FarmProduct* temp = v->respondKill();
 									ListFarmAnimal.remove(AnimalTemp);
 									pemain.addElTas(temp);
+									cout<<temp->getCode()<<" "<<temp->getHarga()<<endl;
 								}
 								found = true;
 							}
@@ -437,10 +441,8 @@ void Game::play(){
 				}
 			}
 		} else if(input == "grow"){
-			pemain.grow((Land*)peta[pemain.getPosisiX()][pemain.getPosisiY()]);
-		} else if(input == "status"){
-			pemain.printPlayerStatus();
-		}else if(input == "tutorial"){
+			pemain.grow((Land*)peta[pemain.getPosisiX()-1][pemain.getPosisiY()]);
+		} else if(input == "tutorial"){
 			tutorial();
 		} else if(input == "keterangan"){
 			keterangan();
@@ -560,7 +562,7 @@ void Game::nextTick(){
 		AnimalTemp->TryMove(xtemp,ytemp);
 		if (isInRange(xtemp,ytemp)){
 				if(!peta[xtemp][ytemp]->getIsObjectExist()){
-				// cout<<"masuk object"<<endl;
+				cout<<"masuk object"<<endl;
 				if(typeid(Barn)==typeid(*peta[xtemp][ytemp])){
 					if(MeatProducingFarmAnimal* v = dynamic_cast<MeatProducingFarmAnimal*>(AnimalTemp)){
 						// cout<<"masuk meat"<<endl;
@@ -619,7 +621,6 @@ void Game::listCommand(){
 	cout<<"well"<<endl;
 	cout<<"sell"<<endl;
 	cout<<"mix"<<endl;
-	cout<<"status"<<endl;
 	cout<<"tutorial"<<endl;
 	cout<<"keterangan"<<endl;
 	cout<<"listCommand"<<endl;
