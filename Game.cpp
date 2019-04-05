@@ -84,11 +84,8 @@ void Game::play(){
 	printPeta();
 	string input,input2;
 	tutorial();
-	cout<<"Masukkan inputan permainan :";
-	cin>>input>>input2;
-	if(input2!="\0"){
-		input = input+" "+input2;
-	}
+	cout<<"Masukkan inputan permainan :"<<endl;;
+	getline(cin,input);
 	bool found;
 	int xtemp,ytemp,i;
 	while(input != "exit"){
@@ -424,7 +421,8 @@ void Game::play(){
 			cout<<"input error"<<endl;
 		}
 		printPeta();
-		cin>>input;
+		cout<<"Masukkan inputan permainan :"<<endl;;
+		getline(cin,input);
 	}
 }
 void Game::printPeta(){
@@ -438,14 +436,14 @@ void Game::printPeta(){
 			petaTemp[i][j] = '/';
 		}
 	}
-	cout<<"Tipe (Cell) : "<<typeid(Cell).name()<<endl;
-	cout<<"Tipe (Cell&) : "<<typeid(Cell&).name()<<endl;
-	cout<<"Tipe (Cell*) : "<<typeid(Cell*).name()<<endl;
-	cout<<"Tipe (Cell**) : "<<typeid(Cell**).name()<<endl;
-	cout<<"Tipe (Cell&&) : "<<typeid(Cell&&).name()<<endl;
+	// cout<<"Tipe (Cell) : "<<typeid(Cell).name()<<endl;
+	// cout<<"Tipe (Cell&) : "<<typeid(Cell&).name()<<endl;
+	// cout<<"Tipe (Cell*) : "<<typeid(Cell*).name()<<endl;
+	// cout<<"Tipe (Cell**) : "<<typeid(Cell**).name()<<endl;
+	// cout<<"Tipe (Cell&&) : "<<typeid(Cell&&).name()<<endl;
 	for(int i=0;i<n;i++){
 		for(int j=0;j<m;j++){
-			cout<<"Tipe pointer "<<i<<" "<<j<<" : "<<typeid(*peta[i][j]).name()<<endl;
+			// cout<<"Tipe pointer "<<i<<" "<<j<<" : "<<typeid(*peta[i][j]).name()<<endl;
 			if(typeid(Grassland)==typeid(*peta[i][j])){
    				if(peta[i][j]->getIsGrassExist()){
    					petaTemp[i][j] = '#';
@@ -473,7 +471,7 @@ void Game::printPeta(){
 			}
 		}
 	}
-	cout<<"Sampe"<<endl;
+	// cout<<"Sampe"<<endl;
 	FarmAnimal* AnimalTemp;
 	int xtemp,ytemp;
 	cout<<"i = "<<ListFarmAnimal.size<<endl;
@@ -483,10 +481,10 @@ void Game::printPeta(){
 		xtemp = AnimalTemp->getX();
 		ytemp = AnimalTemp->getY();
 
-		cout<<"i = "<<i<<" "<<typeid(AnimalTemp).name()<<"x = "<<xtemp<<" y = "<<ytemp<<endl;
-		cout<<"i = "<<i<<" "<<typeid(&AnimalTemp).name()<<"x = "<<xtemp<<" y = "<<ytemp<<endl;
-		cout<<"i = "<<i<<" "<<typeid(*AnimalTemp).name()<<"x = "<<xtemp<<" y = "<<ytemp<<endl;
-		cout<<"i = "<<typeid(Chicken).name()<<endl;
+		// cout<<"i = "<<i<<" "<<typeid(AnimalTemp).name()<<"x = "<<xtemp<<" y = "<<ytemp<<endl;
+		// cout<<"i = "<<i<<" "<<typeid(&AnimalTemp).name()<<"x = "<<xtemp<<" y = "<<ytemp<<endl;
+		// cout<<"i = "<<i<<" "<<typeid(*AnimalTemp).name()<<"x = "<<xtemp<<" y = "<<ytemp<<endl;
+		// cout<<"i = "<<typeid(Chicken).name()<<endl;
 		
 		if(typeid(Chicken)==typeid(*AnimalTemp)){
 			petaTemp[xtemp][ytemp] = 'A';
@@ -501,9 +499,9 @@ void Game::printPeta(){
 		} else if(typeid(Goat) == typeid(*AnimalTemp)){
 			petaTemp[xtemp][ytemp] = 'G';
 		}
-		cout<<"Samp "<<i<<endl;
+		// cout<<"Samp "<<i<<endl;
 	}
-	cout<<"Sampe 2"<<endl;
+	// cout<<"Sampe 2"<<endl;
 	petaTemp[pemain.getPosisiX()][pemain.getPosisiY()] = 'P';
 	for(int i=0;i<n;i++){
 		for(int j=0;j<m;j++){
@@ -590,5 +588,5 @@ int Game::isInRange(int x,int y){
 }
 
 int Game::isLand(int x,int y){
-	return (typeid(Grassland)==typeid(&peta[x][y]) || typeid(Barn)==typeid(&peta[x][y]) || typeid(Coop)==typeid(&peta[x][y]) );
+	return (typeid(Grassland)==typeid(*peta[x][y]) || typeid(Barn)==typeid(*peta[x][y]) || typeid(Coop)==typeid(*peta[x][y]) );
 }
