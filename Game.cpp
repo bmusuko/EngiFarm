@@ -100,14 +100,18 @@ void Game::play(){
 			if(isInRange(pemain.getPosisiX()-1,pemain.getPosisiY())){
 				if(isLand(pemain.getPosisiX()-1,pemain.getPosisiY())){
 					if(!peta[pemain.getPosisiX()-1][pemain.getPosisiY()]->getIsObjectExist()){
-						pemain.move(1);
+						peta[pemain.getPosisiX()][pemain.getPosisiY()]->setIsObjectExist(false);
+						peta[pemain.getPosisiX()-1][pemain.getPosisiY()]->setIsObjectExist(true);
+						pemain.move(1);	
 					}
 				}
 			}
 		}else if(input == "move left"){
 			if(isInRange(pemain.getPosisiX(),pemain.getPosisiY()-1)){
 				if(isLand(pemain.getPosisiX(),pemain.getPosisiY()-1)){
-					if(!peta[pemain.getPosisiX()-1][pemain.getPosisiY()]->getIsObjectExist()){
+					if(!peta[pemain.getPosisiX()][pemain.getPosisiY()-1]->getIsObjectExist()){
+						peta[pemain.getPosisiX()][pemain.getPosisiY()]->setIsObjectExist(false);
+						peta[pemain.getPosisiX()][pemain.getPosisiY()-1]->setIsObjectExist(true);
 						pemain.move(4);
 					}
 				}
@@ -116,6 +120,8 @@ void Game::play(){
 			if(isInRange(pemain.getPosisiX()+1,pemain.getPosisiY())){
 				if(isLand(pemain.getPosisiX()+1,pemain.getPosisiY())){
 					if(!peta[pemain.getPosisiX()+1][pemain.getPosisiY()]->getIsObjectExist()){
+						peta[pemain.getPosisiX()][pemain.getPosisiY()]->setIsObjectExist(false);
+						peta[pemain.getPosisiX()+1][pemain.getPosisiY()]->setIsObjectExist(true);
 						pemain.move(3);
 					}				
 				}
@@ -124,6 +130,8 @@ void Game::play(){
 			if(isInRange(pemain.getPosisiX(),pemain.getPosisiY()+1)){
 				if(isLand(pemain.getPosisiX(),pemain.getPosisiY()+1)){
 					if(!peta[pemain.getPosisiX()][pemain.getPosisiY()+1]->getIsObjectExist()){
+						peta[pemain.getPosisiX()][pemain.getPosisiY()]->setIsObjectExist(false);
+						peta[pemain.getPosisiX()][pemain.getPosisiY()+1]->setIsObjectExist(true);
 						pemain.move(2);
 					}
 				}
@@ -346,6 +354,7 @@ void Game::play(){
 							if(xtemp==pemain.getPosisiX()-1 and ytemp==pemain.getPosisiY()){
 								if(MeatProducingFarmAnimal* v = dynamic_cast<MeatProducingFarmAnimal*>(AnimalTemp)){
 									FarmProduct* temp = v->respondKill();
+									ListFarmAnimal.remove(AnimalTemp);
 									pemain.addElTas(temp);
 								}
 								found = true;
@@ -369,6 +378,7 @@ void Game::play(){
 							if(xtemp==pemain.getPosisiX() and ytemp==pemain.getPosisiY()-1){
 								if(MeatProducingFarmAnimal* v = dynamic_cast<MeatProducingFarmAnimal*>(AnimalTemp)){
 									FarmProduct* temp = v->respondKill();
+									ListFarmAnimal.remove(AnimalTemp);
 									pemain.addElTas(temp);
 								}
 								found = true;
@@ -392,6 +402,7 @@ void Game::play(){
 							if(xtemp==pemain.getPosisiX()+1 and ytemp==pemain.getPosisiY()){
 								if(MeatProducingFarmAnimal* v = dynamic_cast<MeatProducingFarmAnimal*>(AnimalTemp)){
 									FarmProduct* temp = v->respondKill();
+									ListFarmAnimal.remove(AnimalTemp);
 									pemain.addElTas(temp);
 								}
 								found = true;
@@ -415,6 +426,7 @@ void Game::play(){
 							if(xtemp==pemain.getPosisiX() and ytemp==pemain.getPosisiY()+1){
 								if(MeatProducingFarmAnimal* v = dynamic_cast<MeatProducingFarmAnimal*>(AnimalTemp)){
 									FarmProduct* temp = v->respondKill();
+									ListFarmAnimal.remove(AnimalTemp);
 									pemain.addElTas(temp);
 								}
 								found = true;
@@ -426,12 +438,12 @@ void Game::play(){
 			}
 		} else if(input == "grow"){
 			pemain.grow((Land*)peta[pemain.getPosisiX()-1][pemain.getPosisiY()]);
-		} else if(input == "status"){
-			pemain.printPlayerStatus();
-		}else if(input == "tutorial"){
+		} else if(input == "tutorial"){
 			tutorial();
 		} else if(input == "keterangan"){
 			keterangan();
+		} else if(input == "status"){
+			pemain.printPlayerStatus(); 
 		} else if(input == "listCommand"){
 			listCommand();
 		} else{
