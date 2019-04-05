@@ -437,7 +437,7 @@ void Game::play(){
 		} else{
 			cout<<"input error"<<endl;
 		}
-		// nextTick();
+		nextTick();
 		printPeta();
 		cout<<"Masukkan inputan permainan :"<<endl;;
 		getline(cin,input);
@@ -549,18 +549,22 @@ void Game::nextTick(){
 				cout<<"masuk object"<<endl;
 				if(typeid(Barn)==typeid(*peta[xtemp][ytemp])){
 					if(MeatProducingFarmAnimal* v = dynamic_cast<MeatProducingFarmAnimal*>(AnimalTemp)){
-						cout<<"masuk meat"<<endl;
+						// cout<<"masuk meat"<<endl;
+						peta[AnimalTemp->getX()][AnimalTemp->getY()]->setIsObjectExist(false);
 						AnimalTemp->move(xtemp,ytemp);
+						peta[xtemp][ytemp]->setIsObjectExist(true);
 					}		
 				} else if(typeid(Grassland)==typeid(*peta[xtemp][ytemp])){
 					if(MilkProducingFarmAnimal* v = dynamic_cast<MilkProducingFarmAnimal*>(AnimalTemp)){
-											cout<<"masuk milk"<<endl;
+						peta[AnimalTemp->getX()][AnimalTemp->getY()]->setIsObjectExist(false);
 						AnimalTemp->move(xtemp,ytemp);
+						peta[xtemp][ytemp]->setIsObjectExist(true);
 					}
 				} else if(typeid(Coop)==typeid(*peta[xtemp][ytemp])){
 					if(EggProducingFarmAnimal* v = dynamic_cast<EggProducingFarmAnimal*>(AnimalTemp)){
-											cout<<"masuk egg"<<endl;
+						peta[AnimalTemp->getX()][AnimalTemp->getY()]->setIsObjectExist(false);
 						AnimalTemp->move(xtemp,ytemp);
+						peta[xtemp][ytemp]->setIsObjectExist(true);
 					}
 				}
 			}
