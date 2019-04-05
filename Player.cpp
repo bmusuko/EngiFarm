@@ -84,6 +84,7 @@ void Player::interact(Facility* facility, string masukan){
 
 void Player::grow(Land* L){
     L->setIsGrassExist(true);
+    wadahAir--;
 }
 
 void Player::move(int arah){
