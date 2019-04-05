@@ -228,21 +228,23 @@ void Game::play(){
 							xtemp = AnimalTemp->getX();
 							ytemp = AnimalTemp->getY();
 							if(xtemp==pemain.getPosisiX()-1 and ytemp==pemain.getPosisiY()){
-                                if (EggProducingFarmAnimal* v = dynamic_cast<EggProducingFarmAnimal*>(AnimalTemp)){
-                                    pemain.addElTas((v->respondInteract()));
-                                }else if(MilkProducingFarmAnimal* f = dynamic_cast<MilkProducingFarmAnimal*>(AnimalTemp)){
-                                    pemain.addElTas((f->respondInteract()));
-                                }
-                                found = true;
+								if(AnimalTemp->getHasilProduct()){
+                           	     if (EggProducingFarmAnimal* v = dynamic_cast<EggProducingFarmAnimal*>(AnimalTemp)){
+                           	         pemain.addElTas((v->respondInteract()));
+                           	     }else if(MilkProducingFarmAnimal* f = dynamic_cast<MilkProducingFarmAnimal*>(AnimalTemp)){
+                            	        pemain.addElTas((f->respondInteract()));
+                            	    }
+                            	    found = true;
+								}
 							}
 							i++;
 						}
                     }
-                }else if (typeid(Well) == typeid((Well*)peta[pemain.getPosisiX()-1][pemain.getPosisiY()])){
+                }else if (typeid(Well) == typeid(*peta[pemain.getPosisiX()-1][pemain.getPosisiY()])){
                     pemain.interact((Facility*)peta[pemain.getPosisiX()-1][pemain.getPosisiY()],"");
-                }else if(typeid(Truck) == typeid((Truck*)peta[pemain.getPosisiX()-1][pemain.getPosisiY()])){
+                }else if(typeid(Truck) == typeid(*peta[pemain.getPosisiX()-1][pemain.getPosisiY()])){
                     pemain.interact((Facility*)peta[pemain.getPosisiX()-1][pemain.getPosisiY()],"");
-                }else if (typeid(Mixer) == typeid((Mixer*)peta[pemain.getPosisiX()-1][pemain.getPosisiY()])){
+                }else if (typeid(Mixer) == typeid(*peta[pemain.getPosisiX()-1][pemain.getPosisiY()])){
                     pemain.interact((Facility*)peta[pemain.getPosisiX()-1][pemain.getPosisiY()],"");
                 }
             }
@@ -259,21 +261,23 @@ void Game::play(){
 							xtemp = AnimalTemp->getX();
 							ytemp = AnimalTemp->getY();
 							if(xtemp==pemain.getPosisiX() and ytemp==pemain.getPosisiY()-1){
-                                if (EggProducingFarmAnimal* v = dynamic_cast<EggProducingFarmAnimal*>(AnimalTemp)){
-                                    pemain.addElTas((v->respondInteract()));
-                                }else if(MilkProducingFarmAnimal* f = dynamic_cast<MilkProducingFarmAnimal*>(AnimalTemp)){
-                                    pemain.addElTas((f->respondInteract()));
-                                }
-                                found = true;
+                                if(AnimalTemp->getHasilProduct()){
+                              	  if (EggProducingFarmAnimal* v = dynamic_cast<EggProducingFarmAnimal*>(AnimalTemp)){
+                              	      pemain.addElTas((v->respondInteract()));
+                              	  }else if(MilkProducingFarmAnimal* f = dynamic_cast<MilkProducingFarmAnimal*>(AnimalTemp)){
+                              	      pemain.addElTas((f->respondInteract()));
+                              	  }
+                              	  found = true;
+								}
 							}
 							i++;
 						}
                     }
-                }else if (typeid(Well) == typeid((Well*)peta[pemain.getPosisiX()][pemain.getPosisiY()-1])){
+                }else if (typeid(Well) == typeid(*peta[pemain.getPosisiX()][pemain.getPosisiY()-1])){
                     pemain.interact((Facility*)peta[pemain.getPosisiX()][pemain.getPosisiY()-1],"");
-                }else if(typeid(Truck) == typeid((Truck*)peta[pemain.getPosisiX()][pemain.getPosisiY()-1])){
+                }else if(typeid(Truck) == typeid(*peta[pemain.getPosisiX()][pemain.getPosisiY()-1])){
                     pemain.interact((Facility*)peta[pemain.getPosisiX()][pemain.getPosisiY()-1],"");
-                }else if (typeid(Mixer) == typeid((Mixer*)peta[pemain.getPosisiX()][pemain.getPosisiY()-1])){
+                }else if (typeid(Mixer) == typeid(*peta[pemain.getPosisiX()][pemain.getPosisiY()-1])){
                     pemain.interact((Facility*)peta[pemain.getPosisiX()][pemain.getPosisiY()-1],"");
                 }
             }
@@ -282,29 +286,31 @@ void Game::play(){
 			if(isInRange(pemain.getPosisiX()+1,pemain.getPosisiY())){
                 if(isLand(pemain.getPosisiX()+1,pemain.getPosisiY())){
                     if(peta[pemain.getPosisiX()+1][pemain.getPosisiY()]->getIsObjectExist()){
-                        found = false;
-						i = 0;
-						FarmAnimal* AnimalTemp;
-						while(!found and i <ListFarmAnimal.size){
-							AnimalTemp = (ListFarmAnimal.get(i));
-							xtemp = AnimalTemp->getX();
-							ytemp = AnimalTemp->getY();
-							if(xtemp==pemain.getPosisiX()+1 and ytemp==pemain.getPosisiY()){
-                                if (EggProducingFarmAnimal* v = dynamic_cast<EggProducingFarmAnimal*>(AnimalTemp)){
-                                    pemain.addElTas((v->respondInteract()));
-                                }else if(MilkProducingFarmAnimal* f = dynamic_cast<MilkProducingFarmAnimal*>(AnimalTemp)){
-                                    pemain.addElTas((f->respondInteract()));
-                                }
-                                found = true;
+	                        found = false;
+							i = 0;
+							FarmAnimal* AnimalTemp;
+							while(!found and i <ListFarmAnimal.size){
+								AnimalTemp = (ListFarmAnimal.get(i));
+								xtemp = AnimalTemp->getX();
+								ytemp = AnimalTemp->getY();
+								if(xtemp==pemain.getPosisiX()+1 and ytemp==pemain.getPosisiY()){
+									if(AnimalTemp->getHasilProduct()){
+		                                if (EggProducingFarmAnimal* v = dynamic_cast<EggProducingFarmAnimal*>(AnimalTemp)){
+		                                    pemain.addElTas((v->respondInteract()));
+		                                }else if(MilkProducingFarmAnimal* f = dynamic_cast<MilkProducingFarmAnimal*>(AnimalTemp)){
+		                                    pemain.addElTas((f->respondInteract()));
+		                                }
+		                                found = true;
+		                            }
+								}
+								i++;
 							}
-							i++;
-						}
                     }
-                }else if (typeid(Well) == typeid((Well*)peta[pemain.getPosisiX()+1][pemain.getPosisiY()])){
+                }else if (typeid(Well) == typeid(*peta[pemain.getPosisiX()+1][pemain.getPosisiY()])){
                     pemain.interact((Facility*)peta[pemain.getPosisiX()+1][pemain.getPosisiY()],"");
-                }else if(typeid(Truck) == typeid((Truck*)peta[pemain.getPosisiX()+1][pemain.getPosisiY()])){
+                }else if(typeid(Truck) == typeid(*peta[pemain.getPosisiX()+1][pemain.getPosisiY()])){
                     pemain.interact((Facility*)peta[pemain.getPosisiX()+1][pemain.getPosisiY()],"");
-                }else if (typeid(Mixer) == typeid((Mixer*)peta[pemain.getPosisiX()+1][pemain.getPosisiY()])){
+                }else if (typeid(Mixer) == typeid(*peta[pemain.getPosisiX()+1][pemain.getPosisiY()])){
                     pemain.interact((Facility*)peta[pemain.getPosisiX()+1][pemain.getPosisiY()],"");
                 }
             }
@@ -321,21 +327,23 @@ void Game::play(){
 							xtemp = AnimalTemp->getX();
 							ytemp = AnimalTemp->getY();
 							if(xtemp==pemain.getPosisiX() and ytemp==pemain.getPosisiY()+1){
-                                if (EggProducingFarmAnimal* v = dynamic_cast<EggProducingFarmAnimal*>(AnimalTemp)){
-                                    pemain.addElTas((v->respondInteract()));
-                                }else if(MilkProducingFarmAnimal* f = dynamic_cast<MilkProducingFarmAnimal*>(AnimalTemp)){
-                                    pemain.addElTas((f->respondInteract()));
-                                }
-                                found = true;
+                                if(AnimalTemp->getHasilProduct()){
+                             	   if (EggProducingFarmAnimal* v = dynamic_cast<EggProducingFarmAnimal*>(AnimalTemp)){
+                             	       pemain.addElTas((v->respondInteract()));
+                             	   }else if(MilkProducingFarmAnimal* f = dynamic_cast<MilkProducingFarmAnimal*>(AnimalTemp)){
+                             	       pemain.addElTas((f->respondInteract()));
+                             	   }
+                             	   found = true;
+								}
 							}
 							i++;
 						}
                     }
-                }else if (typeid(Well) == typeid((Well*)peta[pemain.getPosisiX()][pemain.getPosisiY()+1])){
+                }else if (typeid(Well) == typeid(*peta[pemain.getPosisiX()][pemain.getPosisiY()+1])){
                     pemain.interact((Facility*)peta[pemain.getPosisiX()][pemain.getPosisiY()+1],"");
-                }else if(typeid(Truck) == typeid((Truck*)peta[pemain.getPosisiX()][pemain.getPosisiY()+1])){
+                }else if(typeid(Truck) == typeid(*peta[pemain.getPosisiX()][pemain.getPosisiY()+1])){
                     pemain.interact((Facility*)peta[pemain.getPosisiX()][pemain.getPosisiY()+1],"");
-                }else if (typeid(Mixer) == typeid((Mixer*)peta[pemain.getPosisiX()][pemain.getPosisiY()+1])){
+                }else if (typeid(Mixer) == typeid(*peta[pemain.getPosisiX()][pemain.getPosisiY()+1])){
                     pemain.interact((Facility*)peta[pemain.getPosisiX()][pemain.getPosisiY()+1],"");
                 }
             }
@@ -353,6 +361,7 @@ void Game::play(){
 							ytemp = AnimalTemp->getY();
 							if(xtemp==pemain.getPosisiX()-1 and ytemp==pemain.getPosisiY()){
 								if(MeatProducingFarmAnimal* v = dynamic_cast<MeatProducingFarmAnimal*>(AnimalTemp)){
+									peta[AnimalTemp->getX()][AnimalTemp->getY()]->setIsObjectExist(false);
 									FarmProduct* temp = v->respondKill();
 									ListFarmAnimal.remove(AnimalTemp);
 									pemain.addElTas(temp);
@@ -378,6 +387,7 @@ void Game::play(){
 							ytemp = AnimalTemp->getY();
 							if(xtemp==pemain.getPosisiX() and ytemp==pemain.getPosisiY()-1){
 								if(MeatProducingFarmAnimal* v = dynamic_cast<MeatProducingFarmAnimal*>(AnimalTemp)){
+									peta[AnimalTemp->getX()][AnimalTemp->getY()]->setIsObjectExist(false);
 									FarmProduct* temp = v->respondKill();
 									ListFarmAnimal.remove(AnimalTemp);
 									pemain.addElTas(temp);
@@ -403,6 +413,7 @@ void Game::play(){
 							ytemp = AnimalTemp->getY();
 							if(xtemp==pemain.getPosisiX()+1 and ytemp==pemain.getPosisiY()){
 								if(MeatProducingFarmAnimal* v = dynamic_cast<MeatProducingFarmAnimal*>(AnimalTemp)){
+									peta[AnimalTemp->getX()][AnimalTemp->getY()]->setIsObjectExist(false);
 									FarmProduct* temp = v->respondKill();
 									ListFarmAnimal.remove(AnimalTemp);
 									pemain.addElTas(temp);
@@ -428,6 +439,7 @@ void Game::play(){
 							ytemp = AnimalTemp->getY();
 							if(xtemp==pemain.getPosisiX() and ytemp==pemain.getPosisiY()+1){
 								if(MeatProducingFarmAnimal* v = dynamic_cast<MeatProducingFarmAnimal*>(AnimalTemp)){
+									peta[AnimalTemp->getX()][AnimalTemp->getY()]->setIsObjectExist(false);
 									FarmProduct* temp = v->respondKill();
 									ListFarmAnimal.remove(AnimalTemp);
 									pemain.addElTas(temp);
@@ -586,6 +598,7 @@ void Game::nextTick(){
 			}
 		}
 		if(AnimalTemp->getLapar()<=-5){
+			peta[AnimalTemp->getX()][AnimalTemp->getY()]->setIsObjectExist(false);
 			ListFarmAnimal.remove(AnimalTemp);
 		}
 	}
