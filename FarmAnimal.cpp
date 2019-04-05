@@ -1,10 +1,8 @@
 using namespace std;
 #include"FarmAnimal.hpp"
 #include <cstdlib>
-#include <ctime>
-#include <iostream>
 
-using namespace std;
+#include <ctime>
 
 FarmAnimal::FarmAnimal(){}
 
@@ -12,7 +10,7 @@ FarmAnimal::FarmAnimal(int x,int y,int lapar_max){
 	hasilProduct = false;
 	this-> x = x;
 	this-> y = y;
-	this-> lapar = lapar_max;
+	this-> lapar_max = lapar_max;
 	this->lapar = lapar_max;
 }
 
@@ -21,16 +19,12 @@ void FarmAnimal::TryMove(int &x,int &y){
 	int random = rand()%4;
 	if(random == 0){
 		x -= 1;
-		// cout << "atas" <<endl;
 	} else if (random == 1){
 		x += 1;
-		// cout << "bawah" <<endl;
 	} else if (random == 2){
 		y += 1;
-		// cout<<"kanan" <<endl;
 	} else if (random == 3){
 		y -=1;
-		// cout<<"kiri" <<endl;
 	}
 }
 void FarmAnimal::move(int x,int y){
