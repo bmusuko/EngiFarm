@@ -13,7 +13,6 @@
 #include "MilkProducingFarmAnimal.hpp"
 #include "EggProducingFarmAnimal.hpp"
 
-
 class Player{
     private:
         int posisiX; //Sementara, gua gatau posisi enaknya taro di player apa di cell
