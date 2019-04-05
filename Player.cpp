@@ -88,13 +88,13 @@ void Player::grow(Land* L){
 
 void Player::move(int arah){
     if (arah == 1){
-        posisiY++;
-    }else if (arah == 2){
-        posisiX++;
-    }else if(arah == 3){
-        posisiY--;
-    }else if (arah == 4){
         posisiX--;
+    }else if (arah == 2){
+        posisiY++;
+    }else if(arah == 3){
+        posisiX++;
+    }else if (arah == 4){
+        posisiY--;
     }
 }
 
