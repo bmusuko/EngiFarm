@@ -87,7 +87,7 @@ Game::Game(){
 	}
 }
 void Game::play(){
-	cout<<"Selamat datang di Engi's Farm"<<endl;
+	cout<<"Selamat datang di Engi's Farm"<<endl<<endl;
 	printPeta();
 	string input,input2;
 	tutorial();
@@ -216,7 +216,7 @@ void Game::play(){
 					}
 				}
 			}
-		} else if(input == "interract up"){
+		} else if(input == "interact up"){
 			if(isInRange(pemain.getPosisiX()-1,pemain.getPosisiY())){
                 if(isLand(pemain.getPosisiX()-1,pemain.getPosisiY())){
                     if(peta[pemain.getPosisiX()-1][pemain.getPosisiY()]->getIsObjectExist()){
@@ -249,7 +249,7 @@ void Game::play(){
                 }
             }
 
-		} else if(input == "interract left"){
+		} else if(input == "interact left"){
 			if(isInRange(pemain.getPosisiX(),pemain.getPosisiY()-1)){
                 if(isLand(pemain.getPosisiX(),pemain.getPosisiY()-1)){
                     if(peta[pemain.getPosisiX()][pemain.getPosisiY()-1]->getIsObjectExist()){
@@ -282,7 +282,7 @@ void Game::play(){
                 }
             }
 
-		} else if(input == "interract down"){
+		} else if(input == "interact down"){
 			if(isInRange(pemain.getPosisiX()+1,pemain.getPosisiY())){
                 if(isLand(pemain.getPosisiX()+1,pemain.getPosisiY())){
                     if(peta[pemain.getPosisiX()+1][pemain.getPosisiY()]->getIsObjectExist()){
@@ -315,7 +315,7 @@ void Game::play(){
                 }
             }
 
-		} else if(input == "interract right"){
+		} else if(input == "interact right"){
 			if(isInRange(pemain.getPosisiX(),pemain.getPosisiY()+1)){
                 if(isLand(pemain.getPosisiX(),pemain.getPosisiY()+1)){
                     if(peta[pemain.getPosisiX()][pemain.getPosisiY()+1]->getIsObjectExist()){
@@ -471,6 +471,7 @@ void Game::play(){
 		getline(cin,input);
 	}
 }
+
 void Game::printPeta(){
 	char**petaTemp;
 	petaTemp = new char*[n];
@@ -482,11 +483,7 @@ void Game::printPeta(){
 			petaTemp[i][j] = '/';
 		}
 	}
-	// cout<<"Tipe (Cell) : "<<typeid(Cell).name()<<endl;
-	// cout<<"Tipe (Cell&) : "<<typeid(Cell&).name()<<endl;
-	// cout<<"Tipe (Cell*) : "<<typeid(Cell*).name()<<endl;
-	// cout<<"Tipe (Cell**) : "<<typeid(Cell**).name()<<endl;
-	// cout<<"Tipe (Cell&&) : "<<typeid(Cell&&).name()<<endl;
+
 	for(int i=0;i<n;i++){
 		for(int j=0;j<m;j++){
 			// cout<<"Tipe pointer "<<i<<" "<<j<<" : "<<typeid(*peta[i][j]).name()<<endl;
@@ -520,7 +517,7 @@ void Game::printPeta(){
 	// cout<<"Sampe"<<endl;
 	FarmAnimal* AnimalTemp;
 	int xtemp,ytemp;
-	cout<<"i = "<<ListFarmAnimal.size<<endl;
+	// cout<<"i = "<<ListFarmAnimal.size<<endl;
 	for(int i=0;i<ListFarmAnimal.size;i++){
 		
 		AnimalTemp = (ListFarmAnimal.get(i));
@@ -605,13 +602,13 @@ void Game::nextTick(){
 }
 
 void Game::tutorial(){
-	cout<<"selamat datang di dalam tutorial"<<endl;
+	cout<<"!--- TUTORIAL ---!"<<endl<<endl;
 	keterangan();
 	listCommand();
 }
 
 void Game::keterangan(){
-	cout<<"Keterangan"<<endl;
+	cout<<"--- KETERANGAN ---"<<endl;
 	cout<<"A : Ayam"<<endl;
 	cout<<"D : Bebek"<<endl;
 	cout<<"B : Kerbau"<<endl;
@@ -622,22 +619,30 @@ void Game::keterangan(){
 	cout<<"- : Grassland"<<endl;
 	cout<<"x : Barn"<<endl;
 	cout<<"o : Coop"<<endl;
-	cout<<"*,@,# : Land dengan rumput"<<endl;
+	cout<<"*,@,# : Land dengan rumput"<<endl<<endl;
 }
 
 
 void Game::listCommand(){
-	cout<<"talk"<<endl;
-	cout<<"interract"<<endl;
-	cout<<"kill"<<endl;
+	cout << "!--- LIST COMMAND ---!"<<endl;
+	cout<<"talk up"<<endl;
+	cout<<"talk left"<<endl;
+	cout<<"talk right"<<endl;
+	cout<<"talk down"<<endl;
+	cout<<"interact up"<<endl;
+	cout<<"interact left"<<endl;
+	cout<<"interact right"<<endl;
+	cout<<"interact down"<<endl;
+	cout<<"kill up"<<endl;
+	cout<<"kill left"<<endl;
+	cout<<"kill right"<<endl;
+	cout<<"kill down"<<endl;
 	cout<<"grow"<<endl;
-	cout<<"well"<<endl;
-	cout<<"sell"<<endl;
-	cout<<"mix"<<endl;
+	cout<<"status"<<endl;
 	cout<<"tutorial"<<endl;
 	cout<<"keterangan"<<endl;
 	cout<<"listCommand"<<endl;
-	cout<<"exit"<<endl;
+	cout<<"exit"<<endl<<endl;
 }
 
 int Game::isInRange(int x,int y){
